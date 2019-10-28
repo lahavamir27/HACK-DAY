@@ -74,7 +74,7 @@ class DataManger {
     func updateRoot(_ category:Category) {
         state.selectedRoot = category
         subData = getSubs(category)
-
+        updateSelectdSubs([])
     }
     
     func updateSelectdSubs(_ subs:[Int]) {
@@ -114,18 +114,21 @@ class DataManger {
             }
         case .pets:
             let images = allImages.filter { (image) -> Bool in
-                image.petType.contains(label.first!)
+                guard !label.isEmpty else { return false }
+                return image.petType.contains(label.first!)
             }
             photos = getRepImage(images: images)
 
         case .loction:
             let images = allImages.filter { (image) -> Bool in
-                image.location == label.first!
+                guard !label.isEmpty else { return false }
+                return image.location == label.first!
             }
             photos = getRepImage(images: images)
         case .objects:
             let images = allImages.filter { (image) -> Bool in
-                image.categories.contains(label.first!)
+                guard !label.isEmpty else { return false }
+                return image.categories.contains(label.first!)
              }
              photos = getRepImage(images: images)
         }
