@@ -12,6 +12,20 @@
 		355DBF1B1E40EA4300671CDD /* Pulley.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 355DBF131E40EA4300671CDD /* Pulley.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		355DBF201E40EA5C00671CDD /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6131BB71D305995002F27F3 /* PulleyPassthroughScrollView.swift */; };
 		355DBF211E40EA5F00671CDD /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6131BB81D305995002F27F3 /* PulleyViewController.swift */; };
+		6675AB6B236705F10048596B /* SubCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */; };
+		6675AB6E2367081E0048596B /* RootCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB6C2367081E0048596B /* RootCategoryCollectionViewCell.swift */; };
+		6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6675AB6D2367081E0048596B /* RootCategoryCollectionViewCell.xib */; };
+		6675AB70236709550048596B /* SubCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB68236705390048596B /* SubCategoryCollectionViewCell.swift */; };
+		6675AB7323670BD70048596B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB7123670BD70048596B /* PhotoCollectionViewCell.swift */; };
+		6675AB7423670BD70048596B /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6675AB7223670BD70048596B /* PhotoCollectionViewCell.xib */; };
+		6675AB7623671A7B0048596B /* AssetGridCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB7523671A7B0048596B /* AssetGridCollectionViewLayout.swift */; };
+		66F701852366DF2100261821 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F701842366DF2100261821 /* ProductViewController.swift */; };
+		66F701872366E02D00261821 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F701862366E02D00261821 /* DrawViewController.swift */; };
+		66F7018A2366E7BA00261821 /* RootCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F701892366E7BA00261821 /* RootCollectionViewController.swift */; };
+		66F7018D2366EB8900261821 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7018C2366EB8900261821 /* PhotosCollectionViewController.swift */; };
+		66F701902366ED2400261821 /* HorizontalFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F7018F2366ED2400261821 /* HorizontalFlow.swift */; };
+		66F701952366F09200261821 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F701942366F09100261821 /* MainViewController.swift */; };
+		66F701992366FFCC00261821 /* SubCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66F701972366FFCC00261821 /* SubCategoryCollectionViewCell.xib */; };
 		853FCF2622F9F98F006829F2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853FCF2422F9F98D006829F2 /* MapKit.framework */; };
 		C6131BB41D30429E002F27F3 /* PrimaryTransitionTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6131BB31D30429E002F27F3 /* PrimaryTransitionTargetViewController.swift */; };
 		C6C51DDD1F5108980079B57F /* UIView+constrainToParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51DDC1F5108980079B57F /* UIView+constrainToParent.swift */; };
@@ -53,6 +67,20 @@
 		355DBF131E40EA4300671CDD /* Pulley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pulley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		355DBF151E40EA4300671CDD /* Pulley.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pulley.h; sourceTree = "<group>"; };
 		355DBF161E40EA4300671CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6675AB68236705390048596B /* SubCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewController.swift; sourceTree = "<group>"; };
+		6675AB6C2367081E0048596B /* RootCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		6675AB6D2367081E0048596B /* RootCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		6675AB7123670BD70048596B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		6675AB7223670BD70048596B /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		6675AB7523671A7B0048596B /* AssetGridCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetGridCollectionViewLayout.swift; sourceTree = "<group>"; };
+		66F701842366DF2100261821 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		66F701862366E02D00261821 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
+		66F701892366E7BA00261821 /* RootCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCollectionViewController.swift; sourceTree = "<group>"; };
+		66F7018C2366EB8900261821 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		66F7018F2366ED2400261821 /* HorizontalFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFlow.swift; sourceTree = "<group>"; };
+		66F701942366F09100261821 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		66F701972366FFCC00261821 /* SubCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		853FCF2422F9F98D006829F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C6131BB31D30429E002F27F3 /* PrimaryTransitionTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryTransitionTargetViewController.swift; sourceTree = "<group>"; };
 		C6131BB71D305995002F27F3 /* PulleyPassthroughScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PulleyPassthroughScrollView.swift; path = PulleyLib/PulleyPassthroughScrollView.swift; sourceTree = SOURCE_ROOT; };
@@ -103,6 +131,70 @@
 			path = Pulley;
 			sourceTree = "<group>";
 		};
+		66F701832366DEFD00261821 /* Hack */ = {
+			isa = PBXGroup;
+			children = (
+				66F701882366E79000261821 /* Collections */,
+				66F701842366DF2100261821 /* ProductViewController.swift */,
+				66F701862366E02D00261821 /* DrawViewController.swift */,
+				66F701942366F09100261821 /* MainViewController.swift */,
+			);
+			path = Hack;
+			sourceTree = "<group>";
+		};
+		66F701882366E79000261821 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				66F7018F2366ED2400261821 /* HorizontalFlow.swift */,
+				66F7018B2366E7C200261821 /* Root Category */,
+				66F7019A2367046E00261821 /* Sub Category */,
+				66F7018E2366EB9100261821 /* Photos */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		66F7018B2366E7C200261821 /* Root Category */ = {
+			isa = PBXGroup;
+			children = (
+				66F701892366E7BA00261821 /* RootCollectionViewController.swift */,
+				6675AB6C2367081E0048596B /* RootCategoryCollectionViewCell.swift */,
+				6675AB6D2367081E0048596B /* RootCategoryCollectionViewCell.xib */,
+			);
+			path = "Root Category";
+			sourceTree = "<group>";
+		};
+		66F7018E2366EB9100261821 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				66F7018C2366EB8900261821 /* PhotosCollectionViewController.swift */,
+				6675AB7123670BD70048596B /* PhotoCollectionViewCell.swift */,
+				6675AB7223670BD70048596B /* PhotoCollectionViewCell.xib */,
+				6675AB7523671A7B0048596B /* AssetGridCollectionViewLayout.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		66F701912366EDC800261821 /* Pully */ = {
+			isa = PBXGroup;
+			children = (
+				C6DF73D41D2DE2B500735EBC /* PrimaryContentViewController.swift */,
+				C6DF73E91D2DFE7F00735EBC /* DrawerContentViewController.swift */,
+				C6131BB31D30429E002F27F3 /* PrimaryTransitionTargetViewController.swift */,
+				D2C07C7A2129BC0F00ED38D7 /* CustomMaskExample.swift */,
+			);
+			path = Pully;
+			sourceTree = "<group>";
+		};
+		66F7019A2367046E00261821 /* Sub Category */ = {
+			isa = PBXGroup;
+			children = (
+				6675AB68236705390048596B /* SubCategoryCollectionViewCell.swift */,
+				66F701972366FFCC00261821 /* SubCategoryCollectionViewCell.xib */,
+				6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */,
+			);
+			path = "Sub Category";
+			sourceTree = "<group>";
+		};
 		853FCF2322F9F98D006829F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,11 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				C6DF73EB1D2E027500735EBC /* Main.storyboard */,
+				66F701832366DEFD00261821 /* Hack */,
 				C6DF73D21D2DE2B500735EBC /* AppDelegate.swift */,
-				C6DF73D41D2DE2B500735EBC /* PrimaryContentViewController.swift */,
-				C6DF73E91D2DFE7F00735EBC /* DrawerContentViewController.swift */,
-				C6131BB31D30429E002F27F3 /* PrimaryTransitionTargetViewController.swift */,
-				D2C07C7A2129BC0F00ED38D7 /* CustomMaskExample.swift */,
+				66F701912366EDC800261821 /* Pully */,
 				C6131BB21D303FE0002F27F3 /* Supporting Files */,
 			);
 			name = "Demo App";
@@ -218,14 +308,15 @@
 				TargetAttributes = {
 					355DBF121E40EA4300671CDD = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = P87N88ZC7B;
+						DevelopmentTeam = 689YP45CMS;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					C6DF73CE1D2DE2B500735EBC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = P87N88ZC7B;
+						DevelopmentTeam = 689YP45CMS;
 						LastSwiftMigration = 1020;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -260,9 +351,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F701992366FFCC00261821 /* SubCategoryCollectionViewCell.xib in Resources */,
 				C6DF73EC1D2E027500735EBC /* Main.storyboard in Resources */,
 				C6DF73DD1D2DE2B500735EBC /* LaunchScreen.storyboard in Resources */,
+				6675AB7423670BD70048596B /* PhotoCollectionViewCell.xib in Resources */,
 				C6DF73DA1D2DE2B500735EBC /* Assets.xcassets in Resources */,
+				6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,9 +378,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F701852366DF2100261821 /* ProductViewController.swift in Sources */,
+				6675AB7623671A7B0048596B /* AssetGridCollectionViewLayout.swift in Sources */,
+				6675AB70236709550048596B /* SubCategoryCollectionViewCell.swift in Sources */,
+				66F701902366ED2400261821 /* HorizontalFlow.swift in Sources */,
 				C6131BB41D30429E002F27F3 /* PrimaryTransitionTargetViewController.swift in Sources */,
+				6675AB6E2367081E0048596B /* RootCategoryCollectionViewCell.swift in Sources */,
+				6675AB6B236705F10048596B /* SubCategoryCollectionViewController.swift in Sources */,
+				66F701952366F09200261821 /* MainViewController.swift in Sources */,
 				D2C07C7C2129BC8B00ED38D7 /* CustomMaskExample.swift in Sources */,
 				C6DF73D51D2DE2B500735EBC /* PrimaryContentViewController.swift in Sources */,
+				66F7018A2366E7BA00261821 /* RootCollectionViewController.swift in Sources */,
+				66F701872366E02D00261821 /* DrawViewController.swift in Sources */,
+				6675AB7323670BD70048596B /* PhotoCollectionViewCell.swift in Sources */,
+				66F7018D2366EB8900261821 /* PhotosCollectionViewController.swift in Sources */,
 				C6DF73EA1D2DFE7F00735EBC /* DrawerContentViewController.swift in Sources */,
 				C6DF73D31D2DE2B500735EBC /* AppDelegate.swift in Sources */,
 			);
@@ -321,9 +426,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P87N88ZC7B;
+				DEVELOPMENT_TEAM = 689YP45CMS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -331,7 +437,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.52inc.Pulley.Pulley;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam.d;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -348,9 +454,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = P87N88ZC7B;
+				DEVELOPMENT_TEAM = 689YP45CMS;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -358,7 +465,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.52inc.Pulley.Pulley;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam.d;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -480,13 +587,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P87N88ZC7B;
+				DEVELOPMENT_TEAM = 689YP45CMS;
 				INFOPLIST_FILE = Pulley/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.52inc.Pulley;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam;
 				PRODUCT_NAME = PulleyDemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -496,13 +606,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P87N88ZC7B;
+				DEVELOPMENT_TEAM = 689YP45CMS;
 				INFOPLIST_FILE = Pulley/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.52inc.Pulley;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam;
 				PRODUCT_NAME = PulleyDemo;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 			};
