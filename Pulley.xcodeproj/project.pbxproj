@@ -12,6 +12,8 @@
 		355DBF1B1E40EA4300671CDD /* Pulley.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 355DBF131E40EA4300671CDD /* Pulley.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		355DBF201E40EA5C00671CDD /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6131BB71D305995002F27F3 /* PulleyPassthroughScrollView.swift */; };
 		355DBF211E40EA5F00671CDD /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6131BB81D305995002F27F3 /* PulleyViewController.swift */; };
+		54CB6E632367A4480036311F /* Carmel in Resources */ = {isa = PBXBuildFile; fileRef = 54CB6E622367A4480036311F /* Carmel */; };
+		54CB6E642367A4840036311F /* Carmel in Resources */ = {isa = PBXBuildFile; fileRef = 54CB6E622367A4480036311F /* Carmel */; };
 		66199B8B23676985006A80F8 /* TestImages in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8A23676985006A80F8 /* TestImages */; };
 		66199B8D236769A3006A80F8 /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8C236769A3006A80F8 /* document.json */; };
 		66199B8F2367A15A006A80F8 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8E2367A15A006A80F8 /* Root.storyboard */; };
@@ -72,6 +74,7 @@
 		355DBF131E40EA4300671CDD /* Pulley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pulley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		355DBF151E40EA4300671CDD /* Pulley.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pulley.h; sourceTree = "<group>"; };
 		355DBF161E40EA4300671CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54CB6E622367A4480036311F /* Carmel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carmel; sourceTree = "<group>"; };
 		66199B8A23676985006A80F8 /* TestImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestImages; sourceTree = "<group>"; };
 		66199B8C236769A3006A80F8 /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
 		66199B8E2367A15A006A80F8 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 		C6DF73C61D2DE2B500735EBC = {
 			isa = PBXGroup;
 			children = (
+				54CB6E622367A4480036311F /* Carmel */,
 				66199B8A23676985006A80F8 /* TestImages */,
 				C6DF73D11D2DE2B500735EBC /* Demo App */,
 				355DBF141E40EA4300671CDD /* Pulley */,
@@ -347,13 +351,13 @@
 				TargetAttributes = {
 					355DBF121E40EA4300671CDD = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 689YP45CMS;
+						DevelopmentTeam = HF4R99WXL6;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					C6DF73CE1D2DE2B500735EBC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 689YP45CMS;
+						DevelopmentTeam = HF4R99WXL6;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -383,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54CB6E642367A4840036311F /* Carmel in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +401,7 @@
 				C6DF73EC1D2E027500735EBC /* Main.storyboard in Resources */,
 				C6DF73DD1D2DE2B500735EBC /* LaunchScreen.storyboard in Resources */,
 				66199B8D236769A3006A80F8 /* document.json in Resources */,
+				54CB6E632367A4480036311F /* Carmel in Resources */,
 				6675AB7423670BD70048596B /* PhotoCollectionViewCell.xib in Resources */,
 				C6DF73DA1D2DE2B500735EBC /* Assets.xcassets in Resources */,
 				6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */,
@@ -473,7 +479,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 689YP45CMS;
+				DEVELOPMENT_TEAM = HF4R99WXL6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -501,7 +507,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 689YP45CMS;
+				DEVELOPMENT_TEAM = HF4R99WXL6;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -634,11 +640,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 689YP45CMS;
+				DEVELOPMENT_TEAM = HF4R99WXL6;
 				INFOPLIST_FILE = Pulley/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.camt;
 				PRODUCT_NAME = PulleyDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -653,11 +659,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 689YP45CMS;
+				DEVELOPMENT_TEAM = HF4R99WXL6;
 				INFOPLIST_FILE = Pulley/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.camt;
 				PRODUCT_NAME = PulleyDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

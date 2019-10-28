@@ -28,13 +28,21 @@
                         <rect key="frame" x="17" y="21" width="66" height="66"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpk-kt-pfv">
+                        <rect key="frame" x="32.5" y="89" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="mwE-M0-lNf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Ar9-KD-Ld1"/>
                 <constraint firstItem="aQx-9p-bIO" firstAttribute="trailing" secondItem="mwE-M0-lNf" secondAttribute="trailing" constant="3" id="LbV-8s-YqB"/>
                 <constraint firstItem="mwE-M0-lNf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="QUS-Uu-J4A"/>
+                <constraint firstItem="Vpk-kt-pfv" firstAttribute="top" secondItem="aQx-9p-bIO" secondAttribute="bottom" constant="2" id="ecC-H8-6mt"/>
                 <constraint firstItem="aQx-9p-bIO" firstAttribute="bottom" secondItem="mwE-M0-lNf" secondAttribute="bottom" constant="3" id="f37-RN-Zfs"/>
+                <constraint firstItem="Vpk-kt-pfv" firstAttribute="centerX" secondItem="aQx-9p-bIO" secondAttribute="centerX" id="gFT-gM-rmg"/>
                 <constraint firstItem="aQx-9p-bIO" firstAttribute="leading" secondItem="mwE-M0-lNf" secondAttribute="leading" constant="-3" id="i2p-aN-1t2"/>
                 <constraint firstItem="aQx-9p-bIO" firstAttribute="top" secondItem="mwE-M0-lNf" secondAttribute="top" constant="-3" id="jff-eR-c54"/>
             </constraints>
@@ -42,6 +50,7 @@
             <size key="customSize" width="100" height="108"/>
             <connections>
                 <outlet property="imageView" destination="mwE-M0-lNf" id="MTX-Lh-wsl"/>
+                <outlet property="label" destination="Vpk-kt-pfv" id="aoO-xn-xMZ"/>
                 <outlet property="selectedOverlay" destination="aQx-9p-bIO" id="PsV-mW-zT4"/>
             </connections>
             <point key="canvasLocation" x="124.6376811594203" y="130.58035714285714"/>

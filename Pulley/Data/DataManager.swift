@@ -47,7 +47,7 @@ class ManagerState {
 class DataManger {
     
     var state = ManagerState()
-    let folderName = "TestImages"
+    let folderName = "Carmel"
 
     private var cachePeople:[ImageRep] = []
     private var cachePet:[ImageRep] = []
@@ -81,6 +81,7 @@ class DataManger {
         let label:[String] = subs.map { (key) in
             return subData[key].label
         }
+        state.selectedSubs = subs
         let labelSet = Set(label)
         switch state.selectedRoot {
         case .people:
@@ -137,7 +138,7 @@ class DataManger {
     
     func getRepImage(images:[FinalImage]) -> [ImageRep] {
         return images.compactMap { (image) -> ImageRep? in
-            if let imageView = getImage(for: image.imageName) {
+            if let imageView = getSmall(for: image.imageName) {
                return ImageRep(label: "", image: imageView)
             }else {
                 return nil
@@ -160,6 +161,15 @@ class DataManger {
             return UIImage(contentsOfFile: imageURL.path)
         }
         return nil
+    }
+    
+    private func getSmall(for key:String) -> UIImage? {
+        
+        if let imageURL = imageURL(imageName: key) {
+              return downsample(imageAt: imageURL, to: CGSize(width: 90, height: 90))
+        }else{
+            return nil
+        }        
     }
     
     private func getSubs(_ category:Category) -> [ImageRep] {
@@ -220,7 +230,7 @@ class DataManger {
             guard !setOfLoctionString.contains(image.location), !image.location.isEmpty else{
                 return
             }
-            if let imageForRep = getImage(for: image.imageName) {
+            if let imageForRep = getSmall(for: image.imageName) {
                 setOfLoctionString.insert(image.location)
                 let rep = ImageRep(label: image.location, image: imageForRep)
                 setOfLoction.insert(rep)
@@ -246,7 +256,7 @@ class DataManger {
                 guard !setOfCategories.contains(category) else {
                     return
                 }
-                if let imageForRep = getImage(for: image.imageName) {
+                if let imageForRep = getSmall(for: image.imageName) {
                     setOfCategories.insert(category)
                     let rep = ImageRep(label: category, image: imageForRep)
                     setOfObject.insert(rep)
@@ -293,6 +303,22 @@ class DataManger {
         
         cachePeople = peoples
         return peoples
+    }
+    
+    func downsample(imageAt imageURL: URL, to pointSize: CGSize) -> UIImage? {
+        let imageSourceOptions = [kCGImageSourceShouldCache: false] as CFDictionary
+        
+        guard let imageSource = CGImageSourceCreateWithURL(imageURL as CFURL, imageSourceOptions) else { return nil }
+        
+        let maxDimensionInPixels = Swift.max(pointSize.width, pointSize.height) *  UIScreen.main.scale
+        let downsampleOptions =  [kCGImageSourceCreateThumbnailFromImageAlways: true,
+                                  kCGImageSourceShouldCacheImmediately: true,
+                                  kCGImageSourceCreateThumbnailWithTransform: true,
+                                  kCGImageSourceThumbnailMaxPixelSize: maxDimensionInPixels] as CFDictionary
+        let downsampledImage =   CGImageSourceCreateThumbnailAtIndex(imageSource, 0, downsampleOptions)!
+        let image = UIImage(cgImage: downsampledImage)
+        return image
+        
     }
         
 }

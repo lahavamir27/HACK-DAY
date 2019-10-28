@@ -83,6 +83,7 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         let selected = dataManager.state.selectedSubs
         
         cell.imageView.image = item.image
+        cell.label.text = item.label
         cell.isSelected = selected.contains(indexPath.item)
         return cell
     }
@@ -133,6 +134,6 @@ class SubCategoryCollectionViewController: UICollectionViewController {
 
 extension SubCategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 67, height: 67)
+        return CGSize(width: 70, height: 105)
     }
 }
