@@ -44,6 +44,11 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         self.collectionView.allowsMultipleSelection = dataManager.state.selectedRoot == .people
         
         self.collectionView.reloadData()
+        
+        dataManager.state.selectedSubs.forEach { (index) in
+            let indexPath = IndexPath(item: index, section: 0)
+            self.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+        }
     }
 
     //  MARK: Private API
@@ -96,13 +101,14 @@ class SubCategoryCollectionViewController: UICollectionViewController {
     }
     */
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+         if collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false {
+               collectionView.deselectItem(at: indexPath, animated: true)
+               return false
+           }
+           return true
     }
-    */
-
+    
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
