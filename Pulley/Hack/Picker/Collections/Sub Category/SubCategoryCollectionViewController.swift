@@ -37,8 +37,16 @@ class SubCategoryCollectionViewController: UICollectionViewController {
     }
     */
 
+    //  MARK: Public API
+    func update() {
+        guard let dataManager = self.dataManager else { return }
+        
+        self.collectionView.allowsMultipleSelection = dataManager.state.selectedRoot == .people
+        
+        self.collectionView.reloadData()
+    }
+    
     // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

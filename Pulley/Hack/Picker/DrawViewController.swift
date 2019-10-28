@@ -69,7 +69,7 @@ extension DrawViewController: PhotosCollectionDelegateProtocol {
 extension DrawViewController: RootCategoryColectionProtocol {
     func didSelect(rootCategory: Category) {
         self.dataManager.updateRoot(rootCategory)
-        self.subCollection?.collectionView.reloadData()
+        self.subCollection?.update()
     }
 }
 
