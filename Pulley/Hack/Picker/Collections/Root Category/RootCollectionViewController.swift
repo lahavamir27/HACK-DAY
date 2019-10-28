@@ -24,6 +24,7 @@ class RootCollectionViewController: UICollectionViewController {
         // Register cell classes
         
         self.collectionView.register(UINib(nibName: "RootCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         // Do any additional setup after loading the view.
     }
 
@@ -104,7 +105,6 @@ class RootCollectionViewController: UICollectionViewController {
 
 extension RootCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: self.view.frame.height, height: self.view.frame.height)
+        return CGSize(width: 106.0, height: 124.0)
     }
 }

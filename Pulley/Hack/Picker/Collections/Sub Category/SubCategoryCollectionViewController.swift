@@ -24,7 +24,12 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         // Register cell classes
         
         self.collectionView.register(UINib(nibName: "SubCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView.allowsMultipleSelection = false
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        
+        if let dataManager = self.dataManager {
+            self.collectionView.allowsMultipleSelection = dataManager.state.selectedRoot == .people
+        }
+        
     }
 
     /*
@@ -128,7 +133,6 @@ class SubCategoryCollectionViewController: UICollectionViewController {
 
 extension SubCategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: self.view.frame.height, height: self.view.frame.height)
+        return CGSize(width: 67, height: 67)
     }
 }
