@@ -81,6 +81,7 @@ class DataManger {
         let label:[String] = subs.map { (key) in
             return subData[key].label
         }
+        state.selectedSubs = subs
         let labelSet = Set(label)
         switch state.selectedRoot {
         case .people:
