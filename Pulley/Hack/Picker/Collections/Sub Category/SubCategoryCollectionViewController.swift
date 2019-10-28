@@ -24,7 +24,11 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         // Register cell classes
         
         self.collectionView.register(UINib(nibName: "SubCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView.allowsMultipleSelection = false
+        
+        if let dataManager = self.dataManager {
+            self.collectionView.allowsMultipleSelection = dataManager.state.selectedRoot == .people
+        }
+        
     }
 
     /*
