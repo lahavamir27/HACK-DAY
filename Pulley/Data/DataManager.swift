@@ -48,10 +48,12 @@ class DataManger {
     
     var state = ManagerState()
     let folderName = "TestImages"
+
     private var cachePeople:[ImageRep] = []
     private var cachePet:[ImageRep] = []
     private var cacheCountry:[ImageRep] = []
     private var cacheObject:[ImageRep] = []
+
     var subData:    [ImageRep] = []
     var photos:     [ImageRep]  = []
     var allImages:  [FinalImage] = []
@@ -64,6 +66,7 @@ class DataManger {
         
         let decodedPhotos = try! JSONDecoder().decode(FinalImages.self, from: data)
         allImages = decodedPhotos.images
+        updateRoot(.people)
         print(decodedPhotos)
         
     }
@@ -71,12 +74,68 @@ class DataManger {
     func updateRoot(_ category:Category) {
         state.selectedRoot = category
         subData = getSubs(category)
- 
+
     }
     
     func updateSelectdSubs(_ subs:[Int]) {
+        let label:[String] = subs.map { (key) in
+            return subData[key].label
+        }
         
+        switch state.selectedRoot {
+        case .people:
+            if label.count == 1{
+                let images = allImages.filter { (image) -> Bool in
+                    var isInclude:Bool = false
+                    for face in image.people {
+                        if face.label == label.first! {
+                            isInclude = true
+                        }
+                    }
+                    return isInclude
+                }
+                photos = getRepImage(images: images)
+
+            }else {
+                let images = allImages.filter { (image) -> Bool in
+                    var facesSet = Set<String>()
+                    image.people.forEach { (face) in
+                        facesSet.insert(face.label)
+                    }
+                    return facesSet.isStrictSubset(of: label)
+                }
+                
+                photos = getRepImage(images: images)
+
+            }
+        case .pets:
+            let images = allImages.filter { (image) -> Bool in
+                image.petType.contains(label.first!)
+            }
+            photos = getRepImage(images: images)
+
+        case .loction:
+            let images = allImages.filter { (image) -> Bool in
+                image.location == label.first!
+            }
+            photos = getRepImage(images: images)
+        case .objects:
+            let images = allImages.filter { (image) -> Bool in
+                image.categories.contains(label.first!)
+             }
+             photos = getRepImage(images: images)
+        }
+    }
     
+    
+    func getRepImage(images:[FinalImage]) -> [ImageRep] {
+        return images.compactMap { (image) -> ImageRep? in
+            if let imageView = getImage(for: image.imageName) {
+               return ImageRep(label: "", image: imageView)
+            }else {
+                return nil
+            }
+        }
     }
     
     func selectPhotos(_ photo:[Int]) {
@@ -115,6 +174,9 @@ class DataManger {
     func petsImages() -> [ImageRep] {
         
         var images:[ImageRep] = []
+        if !cachePet.isEmpty {
+            return cachePet
+        }
         // dont repeat yourself
         for value in allImages {
             if value.petType.contains("cat") {
@@ -127,6 +189,7 @@ class DataManger {
         }
         
         // dont repeat yourself
+
         for value in allImages {
             if value.petType.contains("dog") {
                 if let image = getImage(for: value.imageName) {
@@ -141,6 +204,10 @@ class DataManger {
     }
     
     func locationsImages() -> [ImageRep] {
+        
+        if !cacheCountry.isEmpty {
+            return cacheCountry
+        }
         
         var setOfLoctionString = Set<String>()
         var setOfLoction = Set<ImageRep>()
@@ -163,6 +230,9 @@ class DataManger {
     
     func objectImages() -> [ImageRep] {
         
+        if !cacheObject.isEmpty {
+            return cacheObject
+        }
         var setOfObject = Set<ImageRep>()
         var setOfCategories = Set<String>()
         allImages.forEach { (image) in
@@ -191,6 +261,11 @@ class DataManger {
     
     func peopleImages() -> [ImageRep]
     {
+        
+        if !cachePeople.isEmpty {
+            return cachePeople
+        }
+        
         var setOfPeople = Set<FinalFace>()
         allImages.forEach { (image) in
             image.people.forEach { (face) in
@@ -205,7 +280,7 @@ class DataManger {
             let images =  getImage(for: image.imageName ?? "")
             let rect = CGRect(x: image.cropRect.origin.x * 2, y: image.cropRect.origin.y * 2, width: image.cropRect.size.width * 2, height: image.cropRect.size.height * 2)
             if let cgImage = images?.cgImage?.cropping(to: rect) {
-                return ImageRep(label: "", image: UIImage(cgImage: cgImage))
+                return ImageRep(label: image.label, image: UIImage(cgImage: cgImage))
             }else {
                 return nil
             }
@@ -216,9 +291,15 @@ class DataManger {
     }
         
 }
+
+
+
+
 struct FinalImages:Codable {
     let images:[FinalImage]
 }
+
+
 struct FinalImage:Codable {
     let imageName:String
     let petType:[String]
@@ -226,6 +307,7 @@ struct FinalImage:Codable {
     let people:[FinalFace]
     let location:String
 }
+
 struct ImageRep: Hashable {
     let label:String
     let image:UIImage
@@ -234,6 +316,7 @@ struct ImageRep: Hashable {
         hasher.combine(label)
     }
 }
+
 struct FinalFace:Codable, Equatable, Hashable{
     let label:String
     let cropRect:CGRect
