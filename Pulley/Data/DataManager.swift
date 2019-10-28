@@ -41,7 +41,7 @@ class ManagerState {
         }
     }
     var selectedSubs:[Int] = [0]
-    var selectedPhotos:Set<Int> = [1]
+    var selectedPhotos:[Int] = [1]
 }
 
 class DataManger {
@@ -81,7 +81,7 @@ class DataManger {
         let label:[String] = subs.map { (key) in
             return subData[key].label
         }
-        
+        let labelSet = Set(label)
         switch state.selectedRoot {
         case .people:
             if label.count == 1{
@@ -102,7 +102,11 @@ class DataManger {
                     image.people.forEach { (face) in
                         facesSet.insert(face.label)
                     }
-                    return facesSet.isStrictSubset(of: label)
+                    if labelSet.isSubset(of: facesSet) {
+                        return true
+                    }else {
+                        return false
+                    }
                 }
                 
                 photos = getRepImage(images: images)
@@ -139,9 +143,7 @@ class DataManger {
     }
     
     func selectPhotos(_ photo:[Int]) {
-        
-        
-        
+        state.selectedPhotos = photo
     }
     
     
