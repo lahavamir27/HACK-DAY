@@ -1132,11 +1132,18 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
         }
 
         let lowestStop = getStopList().min() ?? 0
-        
-        drawerContentContainer.frame = CGRect(x: 0.0, y: drawerScrollView.bounds.height - lowestStop , width: drawerScrollView.bounds.width, height: drawerScrollView.contentOffset.y + lowestStop + bounceOverflowMargin)
+        print("Content Offset: \(drawerScrollView.contentOffset.y + lowestStop + bounceOverflowMargin)")
+        print("Height: \(drawerScrollView.bounds.height + bounceOverflowMargin)")
+        if drawerScrollView.contentOffset.y + lowestStop + bounceOverflowMargin >= drawerScrollView.bounds.height + bounceOverflowMargin {
+            drawerContentContainer.frame = CGRect(x: 0.0, y: drawerScrollView.bounds.height - lowestStop , width: drawerScrollView.bounds.width, height: drawerScrollView.bounds.height + bounceOverflowMargin)
+        } else {
+            print("Content Offset In ELSE: \(drawerScrollView.contentOffset.y + lowestStop + bounceOverflowMargin)")
+            print("Height IN ELSE: \(drawerScrollView.bounds.height + bounceOverflowMargin)")
+            drawerContentContainer.frame = CGRect(x: 0.0, y: drawerScrollView.bounds.height - lowestStop , width: drawerScrollView.bounds.width, height: drawerScrollView.contentOffset.y + lowestStop + bounceOverflowMargin)
+        }
         drawerBackgroundVisualEffectView?.frame = drawerContentContainer.frame
         drawerShadowView.frame = drawerContentContainer.frame
-        
+
         // Update rounding mask and shadows
         let borderPath = drawerMaskingPath(byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight]).cgPath
 
