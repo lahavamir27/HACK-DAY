@@ -25,6 +25,7 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         
         self.collectionView.register(UINib(nibName: "SubCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.allowsMultipleSelection = true
+        self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 
     /*
@@ -103,7 +104,6 @@ class SubCategoryCollectionViewController: UICollectionViewController {
 
 extension SubCategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: self.view.frame.height, height: self.view.frame.height)
+        return CGSize(width: 67, height: 67)
     }
 }

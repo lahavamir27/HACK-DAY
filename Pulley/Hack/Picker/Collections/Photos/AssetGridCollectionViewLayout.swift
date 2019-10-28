@@ -27,7 +27,7 @@ class AssetGridCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.itemsPerRowPortrait = 4
+        self.itemsPerRowPortrait = 3
         self.itemsPerRowLandscape = 7
         super.init()
 
@@ -55,21 +55,21 @@ class AssetGridCollectionViewLayout: UICollectionViewFlowLayout {
         }
     }
     
-    override var itemSize: CGSize
-        {
-        set {}
-        get{
-            let pedding:CGFloat = 1.0
-            var row:CGFloat!
-            var numOfColumns: CGFloat {
-                
-                
-                if isPortrait { return CGFloat(itemsPerRowPortrait) } else {return CGFloat(itemsPerRowLandscape)}
-                
-                
-            }
-            let itemWidth = ((self.collectionView!.frame.width - (numOfColumns - 1) * pedding) / numOfColumns)
-            return CGSize(width: itemWidth, height: itemWidth)
-        }
-    }
+//    override var itemSize: CGSize
+//        {
+//        set {}
+//        get{
+//            let pedding:CGFloat = 1.0
+//            var row:CGFloat!
+//            var numOfColumns: CGFloat {
+//                
+//                
+//                if isPortrait { return CGFloat(itemsPerRowPortrait) } else {return CGFloat(itemsPerRowLandscape)}
+//                
+//                
+//            }
+//            let itemWidth = ((self.collectionView!.frame.width - (numOfColumns - 1) * pedding) / numOfColumns)
+//            return CGSize(width: itemWidth, height: itemWidth)
+//        }
+//    }
 }

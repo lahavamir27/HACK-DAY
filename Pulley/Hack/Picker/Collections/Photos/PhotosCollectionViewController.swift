@@ -106,5 +106,12 @@ class PhotosCollectionViewController: UICollectionViewController {
     
     }
     */
+}
+
+extension PhotosCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.frame.width / 4.0
+        return CGSize(width: size, height: size)
+    }
 
 }

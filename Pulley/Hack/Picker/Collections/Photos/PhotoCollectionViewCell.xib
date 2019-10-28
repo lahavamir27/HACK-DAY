@@ -11,33 +11,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoCollectionViewCell" customModule="PulleyDemo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="318" height="330"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="318" height="330"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysb-2j-LRA">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="318" height="330"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vH8-SS-l8w">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="1" y="1" width="316" height="328"/>
                             </imageView>
                             <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-Fa-6S6" userLabel="SelectedOverlay">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="318" height="330"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="vH8-SS-l8w" secondAttribute="trailing" id="67W-P2-RtL"/>
-                            <constraint firstItem="vH8-SS-l8w" firstAttribute="top" secondItem="ysb-2j-LRA" secondAttribute="top" id="924-w7-QUS"/>
-                            <constraint firstAttribute="bottom" secondItem="vH8-SS-l8w" secondAttribute="bottom" id="FeZ-fv-kSz"/>
-                            <constraint firstItem="vH8-SS-l8w" firstAttribute="leading" secondItem="ysb-2j-LRA" secondAttribute="leading" id="OD5-b3-3K4"/>
-                            <constraint firstItem="jDR-Fa-6S6" firstAttribute="width" secondItem="vH8-SS-l8w" secondAttribute="width" id="TgK-ki-Jvv"/>
-                            <constraint firstItem="jDR-Fa-6S6" firstAttribute="height" secondItem="vH8-SS-l8w" secondAttribute="height" id="ZPa-iF-71A"/>
-                            <constraint firstItem="jDR-Fa-6S6" firstAttribute="leading" secondItem="vH8-SS-l8w" secondAttribute="leading" id="ae0-rW-J0R"/>
-                            <constraint firstItem="jDR-Fa-6S6" firstAttribute="top" secondItem="vH8-SS-l8w" secondAttribute="top" id="h40-cP-N9R"/>
+                            <constraint firstItem="vH8-SS-l8w" firstAttribute="leading" secondItem="ysb-2j-LRA" secondAttribute="leading" constant="1" id="9Ix-9Q-K1B"/>
+                            <constraint firstAttribute="trailing" secondItem="vH8-SS-l8w" secondAttribute="trailing" constant="1" id="A3u-gI-bIe"/>
+                            <constraint firstAttribute="bottom" secondItem="vH8-SS-l8w" secondAttribute="bottom" constant="1" id="JJd-em-BxQ"/>
+                            <constraint firstAttribute="bottom" secondItem="jDR-Fa-6S6" secondAttribute="bottom" id="LlT-D6-OFI"/>
+                            <constraint firstItem="vH8-SS-l8w" firstAttribute="top" secondItem="ysb-2j-LRA" secondAttribute="top" constant="1" id="jai-Ve-IXL"/>
+                            <constraint firstAttribute="trailing" secondItem="jDR-Fa-6S6" secondAttribute="trailing" id="ll4-t5-P46"/>
+                            <constraint firstItem="jDR-Fa-6S6" firstAttribute="top" secondItem="ysb-2j-LRA" secondAttribute="top" id="qEm-lU-X02"/>
+                            <constraint firstItem="jDR-Fa-6S6" firstAttribute="leading" secondItem="ysb-2j-LRA" secondAttribute="leading" id="uxF-MS-SbP"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -49,11 +49,12 @@
                 <constraint firstItem="ysb-2j-LRA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="lJH-41-A3s"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="318" height="330"/>
             <connections>
                 <outlet property="SelectedOverlay" destination="jDR-Fa-6S6" id="NMt-nU-6Xc"/>
                 <outlet property="imageView" destination="vH8-SS-l8w" id="OA6-wg-q8Q"/>
             </connections>
-            <point key="canvasLocation" x="139" y="94"/>
+            <point key="canvasLocation" x="331.8840579710145" y="187.5"/>
         </collectionViewCell>
     </objects>
 </document>
