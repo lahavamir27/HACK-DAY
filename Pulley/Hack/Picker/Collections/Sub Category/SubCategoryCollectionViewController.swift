@@ -24,7 +24,7 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         // Register cell classes
         
         self.collectionView.register(UINib(nibName: "SubCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView.allowsMultipleSelection = true
+        self.collectionView.allowsMultipleSelection = false
     }
 
     /*
@@ -44,6 +44,12 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         self.collectionView.allowsMultipleSelection = dataManager.state.selectedRoot == .people
         
         self.collectionView.reloadData()
+    }
+
+    //  MARK: Private API
+    func notify() {
+        let items: [Int] = collectionView.indexPathsForSelectedItems?.map({$0.item}) ?? []
+        self.delegate?.didSelect(subCategory: items)
     }
     
     // MARK: UICollectionViewDataSource
@@ -72,10 +78,15 @@ class SubCategoryCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let items: [Int] = collectionView.indexPathsForSelectedItems?.map({$0.item}) ?? []
-        self.delegate?.didSelect(subCategory: items)
+        notify()
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard self.collectionView.allowsMultipleSelection else {
+            return
+        }
+        notify()
+    }
     // MARK: UICollectionViewDelegate
 
     /*
