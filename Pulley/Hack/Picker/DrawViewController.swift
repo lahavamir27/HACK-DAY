@@ -61,7 +61,7 @@ class DrawViewController: UIViewController {
 
 extension DrawViewController: PhotosCollectionDelegateProtocol {
     func imagesDidChange(_ indexes: [Int], images: [ImageRep]) {
-        self.dataManager.updateSelectPhotos(indexes)
+        self.dataManager.selectPhotos(indexes)
         self.delegate?.didSelect(images: images)
     }
 }
