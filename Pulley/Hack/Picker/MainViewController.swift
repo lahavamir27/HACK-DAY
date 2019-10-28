@@ -15,8 +15,11 @@ class MainViewController: PulleyViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Product"
     }
 
+    var product: Prodcut?
+    
     var canvasVC: ProductViewController?
     
     // MARK: - Navigation
