@@ -16,10 +16,7 @@ class RootCategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        layer.cornerRadius = 10
-        layer.borderColor = UIColor.gray.cgColor
-        layer.borderWidth = 0.1
+        imageView.layer.cornerRadius = 10
     }
     
     override var isSelected: Bool {

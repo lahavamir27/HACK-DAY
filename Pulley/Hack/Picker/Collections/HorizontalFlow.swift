@@ -11,14 +11,13 @@ import UIKit
 class HorizontalFlow: UICollectionViewFlowLayout {
     
     private var contentSize: CGSize = .zero
-    private let spaceBetween: CGFloat = 20
+    private let spaceBetween: CGFloat = 10
     
     override init() {
         super.init()
     }
     
     required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
         super.init()
     }
     
