@@ -70,6 +70,7 @@ extension DrawViewController: RootCategoryColectionProtocol {
     func didSelect(rootCategory: Category) {
         self.dataManager.updateRoot(rootCategory)
         self.subCollection?.update()
+        self.photosCollection?.collectionView.reloadData()
     }
 }
 
