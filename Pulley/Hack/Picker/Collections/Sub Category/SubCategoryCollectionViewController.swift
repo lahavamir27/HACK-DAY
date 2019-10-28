@@ -24,8 +24,12 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         // Register cell classes
         
         self.collectionView.register(UINib(nibName: "SubCategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        self.collectionView.allowsMultipleSelection = true
         self.collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        
+        if let dataManager = self.dataManager {
+            self.collectionView.allowsMultipleSelection = dataManager.state.selectedRoot == .people
+        }
+        
     }
 
     /*
@@ -38,8 +42,27 @@ class SubCategoryCollectionViewController: UICollectionViewController {
     }
     */
 
-    // MARK: UICollectionViewDataSource
+    //  MARK: Public API
+    func update() {
+        guard let dataManager = self.dataManager else { return }
+        
+        self.collectionView.allowsMultipleSelection = dataManager.state.selectedRoot == .people
+        
+        self.collectionView.reloadData()
+        
+        dataManager.state.selectedSubs.forEach { (index) in
+            let indexPath = IndexPath(item: index, section: 0)
+            self.collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .top)
+        }
+    }
 
+    //  MARK: Private API
+    func notify() {
+        let items: [Int] = collectionView.indexPathsForSelectedItems?.map({$0.item}) ?? []
+        self.delegate?.didSelect(subCategory: items)
+    }
+    
+    // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -65,10 +88,15 @@ class SubCategoryCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let items: [Int] = collectionView.indexPathsForSelectedItems?.map({$0.item}) ?? []
-        self.delegate?.didSelect(subCategory: items)
+        notify()
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard self.collectionView.allowsMultipleSelection else {
+            return
+        }
+        notify()
+    }
     // MARK: UICollectionViewDelegate
 
     /*
@@ -78,13 +106,14 @@ class SubCategoryCollectionViewController: UICollectionViewController {
     }
     */
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
+         if collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false {
+               collectionView.deselectItem(at: indexPath, animated: true)
+               return false
+           }
+           return true
     }
-    */
-
+    
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
