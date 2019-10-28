@@ -331,7 +331,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOs-aZ-mnO" userLabel="Root Container">
-                                <rect key="frame" x="0.0" y="25" width="375" height="124"/>
+                                <rect key="frame" x="10" y="25" width="355" height="124"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="124" id="dUs-3R-2xO"/>
                                 </constraints>
@@ -340,7 +340,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGI-29-XqZ" userLabel="Sub Category Container">
-                                <rect key="frame" x="0.0" y="164" width="375" height="75"/>
+                                <rect key="frame" x="10" y="164" width="355" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="MCq-nJ-4sT"/>
                                 </constraints>
@@ -349,7 +349,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JY-5h-fsc" userLabel="Sub Category Container">
-                                <rect key="frame" x="0.0" y="254" width="375" height="79.5"/>
+                                <rect key="frame" x="10" y="254" width="355" height="79.5"/>
                                 <connections>
                                     <segue destination="7Wz-dV-Ybf" kind="embed" id="czo-Jr-nFI"/>
                                 </connections>
@@ -365,8 +365,8 @@
                             <constraint firstItem="4OA-G5-t12" firstAttribute="bottom" secondItem="8JY-5h-fsc" secondAttribute="bottom" id="ak7-Gd-FsW"/>
                             <constraint firstItem="uef-Gr-bDa" firstAttribute="top" secondItem="4OA-G5-t12" secondAttribute="top" constant="10" id="jhq-vV-SpS"/>
                             <constraint firstItem="vGI-29-XqZ" firstAttribute="leading" secondItem="hOs-aZ-mnO" secondAttribute="leading" id="sVj-fU-Ik5"/>
-                            <constraint firstItem="4OA-G5-t12" firstAttribute="trailing" secondItem="hOs-aZ-mnO" secondAttribute="trailing" id="uqY-s6-19c"/>
-                            <constraint firstItem="hOs-aZ-mnO" firstAttribute="leading" secondItem="4OA-G5-t12" secondAttribute="leading" id="xdI-aB-GHZ"/>
+                            <constraint firstItem="4OA-G5-t12" firstAttribute="trailing" secondItem="hOs-aZ-mnO" secondAttribute="trailing" constant="10" id="uqY-s6-19c"/>
+                            <constraint firstItem="hOs-aZ-mnO" firstAttribute="leading" secondItem="4OA-G5-t12" secondAttribute="leading" constant="10" id="xdI-aB-GHZ"/>
                             <constraint firstItem="uef-Gr-bDa" firstAttribute="centerX" secondItem="Fnc-k9-fET" secondAttribute="centerX" id="xeY-ey-b89"/>
                             <constraint firstItem="vGI-29-XqZ" firstAttribute="trailing" secondItem="hOs-aZ-mnO" secondAttribute="trailing" id="zVZ-1n-Yxn"/>
                         </constraints>
@@ -421,7 +421,7 @@
             <objects>
                 <collectionViewController id="wbD-rN-93E" customClass="RootCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vYh-tW-7PU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="VOm-Wn-OYm" customClass="HorizontalFlow" customModule="PulleyDemo" customModuleProvider="target"/>
@@ -450,7 +450,7 @@
             <objects>
                 <collectionViewController id="KF4-Js-R1y" customClass="SubCategoryCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gxp-mh-prT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="75"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="eaA-wp-6za" customClass="HorizontalFlow" customModule="PulleyDemo" customModuleProvider="target"/>
@@ -479,15 +479,10 @@
             <objects>
                 <collectionViewController id="7Wz-dV-Ybf" customClass="PhotosCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="pqk-uq-DsM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="355" height="103.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fbB-ce-e9q">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="52"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="oUH-Kq-OeU" customClass="AssetGridCollectionViewLayout" customModule="PulleyDemo" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KXz-MW-gRs">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
