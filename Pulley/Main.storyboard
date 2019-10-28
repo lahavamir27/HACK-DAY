@@ -45,6 +45,9 @@
                     </view>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="initialDrawerPositionFromIB" value="open"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="drawerTopInset">
+                            <real key="value" value="170"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="drawerContentContainerView" destination="4p9-KZ-WZu" id="kbo-IB-fXW"/>
@@ -340,16 +343,16 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGI-29-XqZ" userLabel="Sub Category Container">
-                                <rect key="frame" x="0.0" y="164" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="115"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="MCq-nJ-4sT"/>
+                                    <constraint firstAttribute="height" constant="115" id="MCq-nJ-4sT"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="KF4-Js-R1y" kind="embed" id="TsL-pX-E5H"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JY-5h-fsc" userLabel="Sub Category Container">
-                                <rect key="frame" x="0.0" y="254" width="375" height="79.5"/>
+                                <rect key="frame" x="0.0" y="294" width="375" height="39.5"/>
                                 <connections>
                                     <segue destination="7Wz-dV-Ybf" kind="embed" id="czo-Jr-nFI"/>
                                 </connections>
@@ -421,7 +424,7 @@
             <objects>
                 <collectionViewController id="wbD-rN-93E" customClass="RootCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vYh-tW-7PU">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="124"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="VOm-Wn-OYm" customClass="HorizontalFlow" customModule="PulleyDemo" customModuleProvider="target"/>
@@ -450,7 +453,7 @@
             <objects>
                 <collectionViewController id="KF4-Js-R1y" customClass="SubCategoryCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gxp-mh-prT">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="75"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewLayout key="collectionViewLayout" id="eaA-wp-6za" customClass="HorizontalFlow" customModule="PulleyDemo" customModuleProvider="target"/>
@@ -479,7 +482,7 @@
             <objects>
                 <collectionViewController id="7Wz-dV-Ybf" customClass="PhotosCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="pqk-uq-DsM">
-                        <rect key="frame" x="0.0" y="0.0" width="355" height="79.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="PvO-2I-RkK">
