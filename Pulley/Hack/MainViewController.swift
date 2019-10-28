@@ -16,7 +16,8 @@ class MainViewController: PulleyViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
+    var canvasVC: ProductViewController?
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -27,12 +28,18 @@ class MainViewController: PulleyViewController {
         if let draw = segue.destination as? DrawViewController {
             draw.delegate = self
         }
+        
+        if let canvas = segue.destination as? ProductViewController {
+            if self.canvasVC == nil { self.canvasVC = canvas }
+        }
     }
 }
 
 extension MainViewController: PhotosCollectionDelegateProtocol {
     func didSelectImage(_ image: UIImage) {
         print("Selected an image")
+        
+        self.canvasVC?.setImage(image)
     }
     
     func didRemoveImage(_ image: UIImage) {

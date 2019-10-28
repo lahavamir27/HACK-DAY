@@ -385,17 +385,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNC-VI-1If">
-                                <rect key="frame" x="179" y="20" width="111" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNC-VI-1If">
+                                <rect key="frame" x="132" y="20" width="111" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cool_carmel" translatesAutoresizingMaskIntoConstraints="NO" id="hT0-zY-ZI4">
+                                <rect key="frame" x="37.5" y="100" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="o9w-C5-nyZ"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="wrl-5H-kht"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jNC-VI-1If" firstAttribute="top" secondItem="gSV-Xt-NaH" secondAttribute="top" constant="20" id="0rD-Vb-kkB"/>
+                            <constraint firstItem="hT0-zY-ZI4" firstAttribute="centerX" secondItem="dYC-NG-o9p" secondAttribute="centerX" id="IZa-jp-y7L"/>
+                            <constraint firstItem="jNC-VI-1If" firstAttribute="centerX" secondItem="dYC-NG-o9p" secondAttribute="centerX" id="Vnr-m0-5kn"/>
+                            <constraint firstItem="hT0-zY-ZI4" firstAttribute="top" secondItem="jNC-VI-1If" secondAttribute="bottom" constant="40" id="YCW-Jg-M3e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gSV-Xt-NaH"/>
                     </view>
+                    <connections>
+                        <outlet property="canvasImage" destination="hT0-zY-ZI4" id="VMz-WL-1g2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pH-gE-xjn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -489,4 +504,7 @@
             <point key="canvasLocation" x="1492" y="474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cool_carmel" width="1280" height="960"/>
+    </resources>
 </document>

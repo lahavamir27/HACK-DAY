@@ -10,9 +10,13 @@ import UIKit
 
 class ProductViewController: UIViewController {
 
+    @IBOutlet weak var canvasImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-     
+    }
+    
+    func setImage(_ image: UIImage) {
+        canvasImage.image = image
     }
 }
