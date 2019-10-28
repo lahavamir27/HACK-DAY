@@ -12,8 +12,9 @@ private let reuseIdentifier = "RootCell"
 
 class RootCollectionViewController: UICollectionViewController {
 
-    weak var delegate: SubCategoryColectionProtocol?
-
+    weak var delegate: RootCategoryColectionProtocol?
+    weak var dataManager: DataManger?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,6 +27,10 @@ class RootCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
+    private func category(for indexPath: IndexPath) -> Category {
+        return Category.allCases[indexPath.item]
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -44,17 +49,25 @@ class RootCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return Category.allCases.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? RootCategoryCollectionViewCell else {
             return UICollectionViewCell()
         }
-    
+        
+        let category = self.category(for: indexPath)
+        let image = UIImage(named: category.thumbName)
+        cell.imageView.image = image
+        cell.label.text = category.label
+        cell.isSelected = dataManager?.state.selectedRoot == category
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.didSelect(rootCategory: category(for: indexPath))
+    }
 
     // MARK: UICollectionViewDelegate
 

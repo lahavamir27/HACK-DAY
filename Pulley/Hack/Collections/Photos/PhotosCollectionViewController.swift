@@ -11,13 +11,13 @@ import UIKit
 private let reuseIdentifier = "PhotoCell"
 
 protocol PhotosCollectionDelegateProtocol: AnyObject {
-    func didSelectImage(_ image: UIImage)
-    func didRemoveImage(_ image: UIImage)
+    func imagesDidChange(_ indexes: [Int], images: [ImageRep])
 }
 
 class PhotosCollectionViewController: UICollectionViewController {
 
     weak var delegate: PhotosCollectionDelegateProtocol?
+    weak var dataManager: DataManger?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,11 @@ class PhotosCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1000
+        return self.dataManager?.photos.count ?? 0
+    }
+    
+    private func photo(for indexPath: IndexPath) -> ImageRep? {
+        return dataManager?.photos[indexPath.item]
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -46,29 +50,35 @@ class PhotosCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         
-        cell.imageView.image = UIImage(named: "carmel2")
+        guard let imageRep = self.photo(for: indexPath) else {
+            cell.imageView.image = nil
+            cell.isSelected = false
+            return cell
+        }
+        
+        cell.isSelected = dataManager?.state.selectedPhotos.contains(indexPath.item) ?? false
+        cell.imageView.image = imageRep.image
         return cell
     }
 
     // MARK: UICollectionViewDelegate
 
+    private var selectIndex: [Int] {
+        guard let selected = self.collectionView.indexPathsForSelectedItems else { return [] }
+        return selected.compactMap({ $0.item })
+    }
+    
+    private var selectedImages: [ImageRep] {
+        guard let selected = self.collectionView.indexPathsForSelectedItems else { return [] }
+        return selected.compactMap({ self.photo(for: $0) })
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        //guard let cell = collectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell else { return }
-        
-        
-        // Todo: Get real image
-        guard let image = UIImage(named: "carmel2") else { return }
-        
-        self.delegate?.didSelectImage(image)
+        self.delegate?.imagesDidChange(selectIndex, images: selectedImages)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
-        // Todo: Get real image
-        guard let image = UIImage(named: "carmel2") else { return }
-        
-        self.delegate?.didRemoveImage(image)
+        self.delegate?.imagesDidChange(selectIndex, images: selectedImages)
         
     }
     /*

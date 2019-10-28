@@ -18,6 +18,7 @@ class MainViewController: PulleyViewController {
     }
 
     var canvasVC: ProductViewController?
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -35,26 +36,9 @@ class MainViewController: PulleyViewController {
     }
 }
 
-extension MainViewController: PhotosCollectionDelegateProtocol {
-    func didSelectImage(_ image: UIImage) {
-        print("Selected an image")
-        
-        self.canvasVC?.setImage(image)
-    }
-    
-    func didRemoveImage(_ image: UIImage) {
-        print("Remove an image")
-    }
-}
-
-extension MainViewController: RootCategoryColectionProtocol {
-    func didSelect(rootCategory: Any) {
-        print("Root category")
-    }
-}
-
-extension MainViewController: SubCategoryColectionProtocol {
-    func didSelect(subCategory: Any) {
-        print("Sub Category")
+extension MainViewController: DrawPhotoSelectionProtocol {
+    func didSelect(images: [ImageRep]) {
+        guard let image = images.first else { return }
+        self.canvasVC?.setImage(image.image)
     }
 }

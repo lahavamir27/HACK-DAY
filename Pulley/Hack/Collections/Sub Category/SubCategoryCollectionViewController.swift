@@ -13,6 +13,7 @@ private let reuseIdentifier = "Cell"
 class SubCategoryCollectionViewController: UICollectionViewController {
 
     weak var delegate: SubCategoryColectionProtocol?
+    weak var dataManager: DataManger?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,17 +45,28 @@ class SubCategoryCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return self.dataManager?.subData.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SubCategoryCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? SubCategoryCollectionViewCell,
+             let dataManager = self.dataManager
+        else {
             return UICollectionViewCell()
         }
         
+        let item = dataManager.subData[indexPath.item]
+        let selected = dataManager.state.selectedSubs
+        
+        cell.imageView.image = item.image
+        cell.isSelected = selected.contains(indexPath.item)
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let items: [Int] = collectionView.indexPathsForSelectedItems?.map({$0.item}) ?? []
+        self.delegate?.didSelect(subCategory: items)
+    }
 
     // MARK: UICollectionViewDelegate
 

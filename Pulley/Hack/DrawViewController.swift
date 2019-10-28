@@ -9,21 +9,25 @@
 import UIKit
 
 protocol RootCategoryColectionProtocol: AnyObject {
-    func didSelect(rootCategory: Any)
+    func didSelect(rootCategory: Category)
 }
 
 protocol SubCategoryColectionProtocol: AnyObject {
-    func didSelect(subCategory: Any)
+    func didSelect(subCategory: [Int])
 }
 
-typealias drawDelegate = PhotosCollectionDelegateProtocol & RootCategoryColectionProtocol & SubCategoryColectionProtocol
+protocol DrawPhotoSelectionProtocol: AnyObject {
+    func didSelect(images: [ImageRep])
+}
 
 class DrawViewController: UIViewController {
 
-    weak var delegate: drawDelegate?
+    weak var delegate: DrawPhotoSelectionProtocol?
     var photosCollection: PhotosCollectionViewController?
     var rootCollection: RootCollectionViewController?
     var subCollection: SubCategoryCollectionViewController?
+    
+    let dataManager = DataManger()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,31 +45,37 @@ class DrawViewController: UIViewController {
         
         if let photosCollection = segue.destination as? PhotosCollectionViewController {
             if self.photosCollection == nil { self.photosCollection = photosCollection }
-            photosCollection.delegate = delegate
-            
+            photosCollection.delegate = self
+            photosCollection.dataManager = dataManager
         } else if let rootCollection = segue.destination as? RootCollectionViewController {
             if self.rootCollection == nil { self.rootCollection = rootCollection }
             rootCollection.delegate = self
+            rootCollection.dataManager = dataManager
         } else if let subCollection = segue.destination as? SubCategoryCollectionViewController {
             if self.subCollection == nil { self.subCollection = subCollection }
             subCollection.delegate = self
+            subCollection.dataManager = dataManager
         }
     }
 }
 
+extension DrawViewController: PhotosCollectionDelegateProtocol {
+    func imagesDidChange(_ indexes: [Int], images: [ImageRep]) {
+        self.dataManager.updateSelectPhotos(indexes)
+        self.delegate?.didSelect(images: images)
+    }
+}
 
 extension DrawViewController: RootCategoryColectionProtocol {
-    func didSelect(rootCategory: Any) {
-        self.delegate?.didSelect(rootCategory: rootCategory)
-        
+    func didSelect(rootCategory: Category) {
+        self.dataManager.updateRoot(rootCategory)
         self.subCollection?.collectionView.reloadData()
     }
 }
 
 extension DrawViewController: SubCategoryColectionProtocol {
-    func didSelect(subCategory: Any) {
-        self.delegate?.didSelect(subCategory: subCategory)
-        
+    func didSelect(subCategory: [Int]) {
+        self.dataManager.updateSelectdSubs(subCategory)
         self.photosCollection?.collectionView.reloadData()
     }
 }
