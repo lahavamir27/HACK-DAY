@@ -44,8 +44,8 @@ class SubCategoryCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             selectedOverlay.layer.borderColor = SelectionColor.bySelection(isSelected).cgColor
-            selectedOverlay.layer.borderWidth = isSelected ? 2.0 : 1.0
-            let scale = CGFloat(isSelected ? 1.1 : 1.0)
+            selectedOverlay.layer.borderWidth = isSelected ? 3.0 : 1.0
+            let scale = CGFloat(isSelected ? 1.00 : 1.0)
             
             UIView.animate(withDuration: 0.2) {
                 self.imageView.transform = .init(scaleX: scale, y: scale)

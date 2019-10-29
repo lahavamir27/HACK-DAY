@@ -322,6 +322,17 @@ class DataManger {
             let images =  getImage(for: image.imageName ?? "")
             let scale = UIScreen.main.scale
             let rect = CGRect(x: image.cropRect.origin.x * scale, y: image.cropRect.origin.y * scale , width: image.cropRect.size.width * scale, height: image.cropRect.size.height * scale)
+            
+            if image.label == "1" {
+                return  ImageRep(label: image.label, image: getImage(for: "lyly")!)
+            }
+            if image.label == "19" {
+                return  ImageRep(label: image.label, image: getImage(for: "anton")!)
+            }
+            if image.label == "2" {
+                return  ImageRep(label: image.label, image: getImage(for: "carmel")!)
+            }
+            
             if let cgImage = images?.cgImage?.cropping(to: rect) {
                 return ImageRep(label: image.label, image: UIImage(cgImage: cgImage))
             }else {
