@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // To create from a Storyboard
-        window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
+        window?.rootViewController = UIStoryboard(name: "Root", bundle: nil).instantiateInitialViewController()!
         
         // To create in code (uncomment this block)
         /*

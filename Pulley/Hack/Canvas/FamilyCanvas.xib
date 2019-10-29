@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="FamilyCanvas" customModule="PulleyDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="familyCanvas" translatesAutoresizingMaskIntoConstraints="NO" id="uko-gb-R6R">
+                    <rect key="frame" x="47" y="292" width="320" height="312"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="fFS-Bi-vjm"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGQ-ZF-GCT" userLabel="userImage1">
+                    <rect key="frame" x="79" y="384" width="80" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="egf-T1-y8c"/>
+                        <constraint firstAttribute="height" constant="83" id="rgu-2m-677"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R1p-48-OE6" userLabel="userImage2">
+                    <rect key="frame" x="168" y="384" width="79" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="79" id="B4X-f2-DE9"/>
+                        <constraint firstAttribute="height" constant="83" id="mNF-gd-OZL"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJQ-IB-LSF" userLabel="userImage3">
+                    <rect key="frame" x="254" y="384" width="80" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="E1h-Gm-n80"/>
+                        <constraint firstAttribute="height" constant="83" id="Eq0-zW-edk"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="R1p-48-OE6" firstAttribute="top" secondItem="uko-gb-R6R" secondAttribute="top" constant="92" id="6bM-S1-wR6"/>
+                <constraint firstItem="uko-gb-R6R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8y8-kN-H0k"/>
+                <constraint firstItem="YGQ-ZF-GCT" firstAttribute="top" secondItem="uko-gb-R6R" secondAttribute="top" constant="92" id="BSc-zq-kV0"/>
+                <constraint firstItem="IJQ-IB-LSF" firstAttribute="top" secondItem="uko-gb-R6R" secondAttribute="top" constant="92" id="JHE-AG-6iH"/>
+                <constraint firstItem="uko-gb-R6R" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SL8-Yp-zoK"/>
+                <constraint firstItem="R1p-48-OE6" firstAttribute="leading" secondItem="uko-gb-R6R" secondAttribute="leading" constant="121" id="gQc-oV-j5b"/>
+                <constraint firstItem="IJQ-IB-LSF" firstAttribute="leading" secondItem="uko-gb-R6R" secondAttribute="leading" constant="207" id="hmb-6I-D9F"/>
+                <constraint firstItem="YGQ-ZF-GCT" firstAttribute="leading" secondItem="uko-gb-R6R" secondAttribute="leading" constant="32" id="le7-qF-5El"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="userImage1" destination="YGQ-ZF-GCT" id="5jn-tJ-xtZ"/>
+                <outlet property="userImage2" destination="R1p-48-OE6" id="8R2-J2-nW3"/>
+                <outlet property="userImage3" destination="IJQ-IB-LSF" id="6dU-ZG-CXQ"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="familyCanvas" width="450" height="312"/>
+    </resources>
+</document>

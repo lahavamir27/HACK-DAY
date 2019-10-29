@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jae-VF-len">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="nuz-4c-swl">
+            <objects>
+                <navigationController id="Jae-VF-len" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fR5-eS-f8J">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Qv6-L1-cFP" kind="relationship" relationship="rootViewController" id="FHT-bs-XoY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9r-1y-n09" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1128" y="106"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="iPj-ZW-fcW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="hH0-tv-bou" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EzZ-wi-rOa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4vo-Vb-DEg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275" y="38"/>
+        </scene>
+        <!--Store View Controller-->
+        <scene sceneID="3qp-VE-uPv">
+            <objects>
+                <collectionViewController id="Qv6-L1-cFP" customClass="StoreViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="eJg-1z-C1N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cHB-MB-XAX">
+                            <size key="itemSize" width="150" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RootCell" id="Xzm-8o-maj" customClass="ProductCell" customModule="PulleyDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2UM-M3-MJX">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="petProduct" translatesAutoresizingMaskIntoConstraints="NO" id="oTE-Do-pHe">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="250"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oTE-Do-pHe" firstAttribute="top" secondItem="2UM-M3-MJX" secondAttribute="top" id="adY-1U-J1i"/>
+                                        <constraint firstAttribute="bottom" secondItem="oTE-Do-pHe" secondAttribute="bottom" id="wTE-0y-tIU"/>
+                                        <constraint firstItem="oTE-Do-pHe" firstAttribute="leading" secondItem="2UM-M3-MJX" secondAttribute="leading" id="zYn-p2-y1H"/>
+                                        <constraint firstAttribute="trailing" secondItem="oTE-Do-pHe" secondAttribute="trailing" id="zau-93-swS"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="oTE-Do-pHe" id="91B-pr-jFz"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Qv6-L1-cFP" id="SuP-Ea-YdR"/>
+                            <outlet property="delegate" destination="Qv6-L1-cFP" id="cau-bm-646"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="R5L-SV-DSz"/>
+                    <connections>
+                        <segue destination="hH0-tv-bou" kind="show" identifier="showProduct" id="T0h-Gr-RMA"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVx-RH-38u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-286" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="petProduct" width="230" height="356"/>
+    </resources>
+</document>

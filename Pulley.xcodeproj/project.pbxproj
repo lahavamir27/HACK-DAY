@@ -16,6 +16,11 @@
 		54CB6E672367C9830036311F /* Carmel in Resources */ = {isa = PBXBuildFile; fileRef = 54CB6E652367C9830036311F /* Carmel */; };
 		66199B8B23676985006A80F8 /* TestImages in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8A23676985006A80F8 /* TestImages */; };
 		66199B8D236769A3006A80F8 /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8C236769A3006A80F8 /* document.json */; };
+		66199B8F2367A15A006A80F8 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8E2367A15A006A80F8 /* Root.storyboard */; };
+		66199B922367B846006A80F8 /* PetCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66199B912367B846006A80F8 /* PetCanvas.xib */; };
+		66199B942367BAC2006A80F8 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66199B932367BAC2006A80F8 /* CanvasView.swift */; };
+		66199B962367CB26006A80F8 /* LoveCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66199B952367CB26006A80F8 /* LoveCanvas.xib */; };
+		66199B982367D8D4006A80F8 /* FamilyCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66199B972367D8D4006A80F8 /* FamilyCanvas.xib */; };
 		6675AB6B236705F10048596B /* SubCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */; };
 		6675AB6E2367081E0048596B /* RootCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB6C2367081E0048596B /* RootCategoryCollectionViewCell.swift */; };
 		6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6675AB6D2367081E0048596B /* RootCategoryCollectionViewCell.xib */; };
@@ -76,6 +81,11 @@
 		54CB6E652367C9830036311F /* Carmel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carmel; sourceTree = "<group>"; };
 		66199B8A23676985006A80F8 /* TestImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestImages; sourceTree = "<group>"; };
 		66199B8C236769A3006A80F8 /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
+		66199B8E2367A15A006A80F8 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		66199B912367B846006A80F8 /* PetCanvas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCanvas.xib; sourceTree = "<group>"; };
+		66199B932367BAC2006A80F8 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		66199B952367CB26006A80F8 /* LoveCanvas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoveCanvas.xib; sourceTree = "<group>"; };
+		66199B972367D8D4006A80F8 /* FamilyCanvas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyCanvas.xib; sourceTree = "<group>"; };
 		6675AB68236705390048596B /* SubCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		6675AB6C2367081E0048596B /* RootCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +152,17 @@
 			path = Pulley;
 			sourceTree = "<group>";
 		};
+		66199B902367B7DD006A80F8 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				66199B912367B846006A80F8 /* PetCanvas.xib */,
+				66199B932367BAC2006A80F8 /* CanvasView.swift */,
+				66199B952367CB26006A80F8 /* LoveCanvas.xib */,
+				66199B972367D8D4006A80F8 /* FamilyCanvas.xib */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
 		6675AB77236743D30048596B /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,18 +182,19 @@
 			path = Picker;
 			sourceTree = "<group>";
 		};
-		6675AB7B2367616D0048596B /* Products */ = {
+		6675AB7B2367616D0048596B /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				6675AB7C236761930048596B /* StoreViewController.swift */,
 			);
-			path = Products;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		66F701832366DEFD00261821 /* Hack */ = {
 			isa = PBXGroup;
 			children = (
-				6675AB7B2367616D0048596B /* Products */,
+				66199B902367B7DD006A80F8 /* Canvas */,
+				6675AB7B2367616D0048596B /* Home */,
 				6675AB7A2367615F0048596B /* Picker */,
 			);
 			path = Hack;
@@ -276,6 +298,7 @@
 			children = (
 				6675AB77236743D30048596B /* Data */,
 				C6DF73EB1D2E027500735EBC /* Main.storyboard */,
+				66199B8E2367A15A006A80F8 /* Root.storyboard */,
 				66F701832366DEFD00261821 /* Hack */,
 				C6DF73D21D2DE2B500735EBC /* AppDelegate.swift */,
 				66F701912366EDC800261821 /* Pully */,
@@ -354,7 +377,7 @@
 					};
 					C6DF73CE1D2DE2B500735EBC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = HF4R99WXL6;
+						DevelopmentTeam = 689YP45CMS;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
@@ -392,15 +415,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66199B8F2367A15A006A80F8 /* Root.storyboard in Resources */,
 				66F701992366FFCC00261821 /* SubCategoryCollectionViewCell.xib in Resources */,
 				66199B8B23676985006A80F8 /* TestImages in Resources */,
 				C6DF73EC1D2E027500735EBC /* Main.storyboard in Resources */,
 				C6DF73DD1D2DE2B500735EBC /* LaunchScreen.storyboard in Resources */,
 				54CB6E672367C9830036311F /* Carmel in Resources */,
+				66199B962367CB26006A80F8 /* LoveCanvas.xib in Resources */,
 				66199B8D236769A3006A80F8 /* document.json in Resources */,
 				6675AB7423670BD70048596B /* PhotoCollectionViewCell.xib in Resources */,
 				C6DF73DA1D2DE2B500735EBC /* Assets.xcassets in Resources */,
+				66199B922367B846006A80F8 /* PetCanvas.xib in Resources */,
 				6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */,
+				66199B982367D8D4006A80F8 /* FamilyCanvas.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66199B942367BAC2006A80F8 /* CanvasView.swift in Sources */,
 				66F701852366DF2100261821 /* ProductViewController.swift in Sources */,
 				6675AB7623671A7B0048596B /* AssetGridCollectionViewLayout.swift in Sources */,
 				6675AB70236709550048596B /* SubCategoryCollectionViewCell.swift in Sources */,
@@ -636,11 +664,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HF4R99WXL6;
+				DEVELOPMENT_TEAM = 689YP45CMS;
 				INFOPLIST_FILE = Pulley/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.camt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam;
 				PRODUCT_NAME = PulleyDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -655,11 +683,11 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HF4R99WXL6;
+				DEVELOPMENT_TEAM = 689YP45CMS;
 				INFOPLIST_FILE = Pulley/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.camt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackday.cam;
 				PRODUCT_NAME = PulleyDemo;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

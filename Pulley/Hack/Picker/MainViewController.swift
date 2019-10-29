@@ -15,8 +15,14 @@ class MainViewController: PulleyViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let title = self.product?.title {
+            self.title = title
+        }
+        
     }
 
+    var product: Prodcut?
+    
     var canvasVC: ProductViewController?
     
     // MARK: - Navigation
@@ -32,13 +38,14 @@ class MainViewController: PulleyViewController {
         
         if let canvas = segue.destination as? ProductViewController {
             if self.canvasVC == nil { self.canvasVC = canvas }
+            
+            canvasVC?.product = self.product
         }
     }
 }
 
 extension MainViewController: DrawPhotoSelectionProtocol {
     func didSelect(images: [ImageRep]) {
-        guard let image = images.first else { return }
-        self.canvasVC?.setImage(image.image)
+        self.canvasVC?.setImage(images.map({ $0.image }))
     }
 }
