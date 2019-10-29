@@ -27,11 +27,10 @@ class DrawViewController: UIViewController {
     var rootCollection: RootCollectionViewController?
     var subCollection: SubCategoryCollectionViewController?
     
-    let dataManager = DataManger()
+    let dataManager = DataManger.shared()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     

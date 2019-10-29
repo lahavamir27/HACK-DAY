@@ -12,8 +12,8 @@
 		355DBF1B1E40EA4300671CDD /* Pulley.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 355DBF131E40EA4300671CDD /* Pulley.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		355DBF201E40EA5C00671CDD /* PulleyPassthroughScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6131BB71D305995002F27F3 /* PulleyPassthroughScrollView.swift */; };
 		355DBF211E40EA5F00671CDD /* PulleyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6131BB81D305995002F27F3 /* PulleyViewController.swift */; };
-		54CB6E632367A4480036311F /* Carmel in Resources */ = {isa = PBXBuildFile; fileRef = 54CB6E622367A4480036311F /* Carmel */; };
-		54CB6E642367A4840036311F /* Carmel in Resources */ = {isa = PBXBuildFile; fileRef = 54CB6E622367A4480036311F /* Carmel */; };
+		54CB6E662367C9830036311F /* Carmel in Resources */ = {isa = PBXBuildFile; fileRef = 54CB6E652367C9830036311F /* Carmel */; };
+		54CB6E672367C9830036311F /* Carmel in Resources */ = {isa = PBXBuildFile; fileRef = 54CB6E652367C9830036311F /* Carmel */; };
 		66199B8B23676985006A80F8 /* TestImages in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8A23676985006A80F8 /* TestImages */; };
 		66199B8D236769A3006A80F8 /* document.json in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8C236769A3006A80F8 /* document.json */; };
 		6675AB6B236705F10048596B /* SubCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */; };
@@ -73,7 +73,7 @@
 		355DBF131E40EA4300671CDD /* Pulley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pulley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		355DBF151E40EA4300671CDD /* Pulley.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pulley.h; sourceTree = "<group>"; };
 		355DBF161E40EA4300671CDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54CB6E622367A4480036311F /* Carmel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carmel; sourceTree = "<group>"; };
+		54CB6E652367C9830036311F /* Carmel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carmel; sourceTree = "<group>"; };
 		66199B8A23676985006A80F8 /* TestImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestImages; sourceTree = "<group>"; };
 		66199B8C236769A3006A80F8 /* document.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = document.json; sourceTree = "<group>"; };
 		6675AB68236705390048596B /* SubCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -253,7 +253,7 @@
 		C6DF73C61D2DE2B500735EBC = {
 			isa = PBXGroup;
 			children = (
-				54CB6E622367A4480036311F /* Carmel */,
+				54CB6E652367C9830036311F /* Carmel */,
 				66199B8A23676985006A80F8 /* TestImages */,
 				C6DF73D11D2DE2B500735EBC /* Demo App */,
 				355DBF141E40EA4300671CDD /* Pulley */,
@@ -384,7 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54CB6E642367A4840036311F /* Carmel in Resources */,
+				54CB6E662367C9830036311F /* Carmel in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,8 +396,8 @@
 				66199B8B23676985006A80F8 /* TestImages in Resources */,
 				C6DF73EC1D2E027500735EBC /* Main.storyboard in Resources */,
 				C6DF73DD1D2DE2B500735EBC /* LaunchScreen.storyboard in Resources */,
+				54CB6E672367C9830036311F /* Carmel in Resources */,
 				66199B8D236769A3006A80F8 /* document.json in Resources */,
-				54CB6E632367A4480036311F /* Carmel in Resources */,
 				6675AB7423670BD70048596B /* PhotoCollectionViewCell.xib in Resources */,
 				C6DF73DA1D2DE2B500735EBC /* Assets.xcassets in Resources */,
 				6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */,

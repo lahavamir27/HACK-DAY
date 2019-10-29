@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vpk-kt-pfv">
-                        <rect key="frame" x="32.5" y="89" width="35.5" height="17"/>
+                        <rect key="frame" x="32.5" y="91" width="35.5" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                 <constraint firstItem="mwE-M0-lNf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Ar9-KD-Ld1"/>
                 <constraint firstItem="aQx-9p-bIO" firstAttribute="trailing" secondItem="mwE-M0-lNf" secondAttribute="trailing" constant="3" id="LbV-8s-YqB"/>
                 <constraint firstItem="mwE-M0-lNf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="QUS-Uu-J4A"/>
-                <constraint firstItem="Vpk-kt-pfv" firstAttribute="top" secondItem="aQx-9p-bIO" secondAttribute="bottom" constant="2" id="ecC-H8-6mt"/>
+                <constraint firstItem="Vpk-kt-pfv" firstAttribute="top" secondItem="aQx-9p-bIO" secondAttribute="bottom" constant="4" id="ecC-H8-6mt"/>
                 <constraint firstItem="aQx-9p-bIO" firstAttribute="bottom" secondItem="mwE-M0-lNf" secondAttribute="bottom" constant="3" id="f37-RN-Zfs"/>
                 <constraint firstItem="Vpk-kt-pfv" firstAttribute="centerX" secondItem="aQx-9p-bIO" secondAttribute="centerX" id="gFT-gM-rmg"/>
                 <constraint firstItem="aQx-9p-bIO" firstAttribute="leading" secondItem="mwE-M0-lNf" secondAttribute="leading" constant="-3" id="i2p-aN-1t2"/>

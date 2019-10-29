@@ -45,6 +45,19 @@ class ManagerState {
 }
 
 class DataManger {
+
+    private static var sharedDataManger: DataManger = {
+        let sharedDataManger = DataManger()
+        
+        // Configuration
+        // ...
+        
+        return sharedDataManger
+    }()
+    
+    class func shared() -> DataManger {
+        return sharedDataManger
+    }
     
     var state = ManagerState()
     let folderName = "Carmel"
@@ -57,17 +70,19 @@ class DataManger {
     var subData:    [ImageRep] = []
     var photos:     [ImageRep]  = []
     var allImages:  [FinalImage] = []
+    var realImages: [String:UIImage] = [:]
     
     
-    init() {
+    func startUp() {
         let url = Bundle.main.url(forResource: "document", withExtension: "json")!
         let data = try! Data(contentsOf: url)
         
         
         let decodedPhotos = try! JSONDecoder().decode(FinalImages.self, from: data)
         allImages = decodedPhotos.images
+        updateRoot(.objects)
+        updateRoot(.pets)
         updateRoot(.people)
-        print(decodedPhotos)
         
     }
     
@@ -129,7 +144,9 @@ class DataManger {
         case .objects:
             let images = allImages.filter { (image) -> Bool in
                 guard !label.isEmpty else { return false }
-                return image.categories.contains(label.first!)
+                
+                let newLabel = label.first!.replacingOccurrences(of: " ", with: "_").lowercased()
+                return image.categories.contains(newLabel)
              }
              photos = getRepImage(images: images)
         }
@@ -138,7 +155,11 @@ class DataManger {
     
     func getRepImage(images:[FinalImage]) -> [ImageRep] {
         return images.compactMap { (image) -> ImageRep? in
+            if realImages[image.imageName] != nil {
+                return ImageRep(label: "", image: realImages[image.imageName]!)
+            }
             if let imageView = getSmall(for: image.imageName) {
+               realImages[image.imageName] = imageView
                return ImageRep(label: "", image: imageView)
             }else {
                 return nil
@@ -258,7 +279,9 @@ class DataManger {
                 }
                 if let imageForRep = getSmall(for: image.imageName) {
                     setOfCategories.insert(category)
-                    let rep = ImageRep(label: category, image: imageForRep)
+                    let cat = category.firstCapitalized
+                    let r = cat.replacingOccurrences(of: "_", with: " ")
+                    let rep = ImageRep(label: r, image: imageForRep)
                     setOfObject.insert(rep)
                 }
             }
@@ -274,6 +297,7 @@ class DataManger {
         a.label < b.label
     }
     
+    
     func peopleImages() -> [ImageRep]
     {
         
@@ -285,21 +309,42 @@ class DataManger {
         allImages.forEach { (image) in
             image.people.forEach { (face) in
                 let faceT = FinalFace(label: face.label, corpRect: face.cropRect, imageName: image.imageName)
-                setOfPeople.insert(faceT)
+                if face.cropRect.origin.x < 0 || face.cropRect.origin.y < 0 || face.cropRect.size.width > 70{
+                }else{
+                    setOfPeople.insert(faceT)
+                }
             }
+        }
+        
+        
+        
+        let r = Array(setOfPeople).compactMap( { (image) -> ImageRep? in
+            let images =  getImage(for: image.imageName ?? "")
+            let scale = UIScreen.main.scale
+            let rect = CGRect(x: image.cropRect.origin.x * scale, y: image.cropRect.origin.y * scale , width: image.cropRect.size.width * scale, height: image.cropRect.size.height * scale)
+            if let cgImage = images?.cgImage?.cropping(to: rect) {
+                return ImageRep(label: image.label, image: UIImage(cgImage: cgImage))
+            }else {
+                return nil
+            }
+        })
+        
+        return r.sorted { (a, b) -> Bool in
+            return a.label < b.label
         }
         
         let peoples = Array(setOfPeople).sorted { (imageA, imageB) -> Bool in
             return imageA.label < imageB.label
         }.compactMap { (image) -> ImageRep? in
             let images =  getImage(for: image.imageName ?? "")
-            let rect = CGRect(x: image.cropRect.origin.x * 2, y: image.cropRect.origin.y * 2, width: image.cropRect.size.width * 2, height: image.cropRect.size.height * 2)
+            let scale = UIScreen.main.scale
+            let rect = CGRect(x: image.cropRect.origin.x * scale, y: image.cropRect.origin.y * scale , width: image.cropRect.size.width * scale, height: image.cropRect.size.height * scale)
             if let cgImage = images?.cgImage?.cropping(to: rect) {
                 return ImageRep(label: image.label, image: UIImage(cgImage: cgImage))
             }else {
                 return nil
             }
-        }
+        }.sorted(by: sortMe)
         
         cachePeople = peoples
         return peoples
@@ -365,5 +410,15 @@ struct FinalFace:Codable, Equatable, Hashable{
     
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.label == rhs.label
+    }
+}
+
+
+extension StringProtocol {
+    var firstUppercased: String {
+        return prefix(1).uppercased()  + dropFirst()
+    }
+    var firstCapitalized: String {
+        return prefix(1).capitalized + dropFirst()
     }
 }

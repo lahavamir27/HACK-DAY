@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.rootViewController = pulleyDrawerVC
          */
-        
+        DataManger.shared().startUp()
         window?.makeKeyAndVisible()
         
         return true
