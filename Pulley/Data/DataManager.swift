@@ -97,6 +97,7 @@ class DataManger {
             return subData[key].label
         }
         state.selectedSubs = subs
+        state.selectedPhotos = []
         let labelSet = Set(label)
         switch state.selectedRoot {
         case .people:

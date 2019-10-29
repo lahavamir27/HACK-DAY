@@ -18,7 +18,7 @@ class MainViewController: PulleyViewController {
         if let title = self.product?.title {
             self.title = title
         }
-        
+        setDrawerPosition(position: .partiallyRevealed, animated: false)
         self.delegate = self
     }
 

@@ -135,6 +135,6 @@ class SubCategoryCollectionViewController: UICollectionViewController {
 
 extension SubCategoryCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 75, height: 105)
+        return CGSize(width: 85, height: 105)
     }
 }

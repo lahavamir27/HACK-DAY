@@ -19,7 +19,7 @@ enum SelectionColor {
     var cgColor: CGColor {
         switch self {
         case .selected:
-            return UIColor(red: 240.0/255.0, green: 83.0/255.0, blue: 25.0/255.0, alpha: 1.0).cgColor
+            return UIColor(displayP3Red: 0, green: 118/255, blue: 234/255, alpha: 1).cgColor
         case .unselected:
             return UIColor.lightGray.cgColor
         }
@@ -34,8 +34,8 @@ class SubCategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.layer.cornerRadius = 30
-        selectedOverlay.layer.cornerRadius = 33
+        imageView.layer.cornerRadius = 29
+        selectedOverlay.layer.cornerRadius = 35
         selectedOverlay.backgroundColor = .clear
         selectedOverlay.isHidden = false
     }
@@ -44,7 +44,7 @@ class SubCategoryCollectionViewCell: UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             selectedOverlay.layer.borderColor = SelectionColor.bySelection(isSelected).cgColor
-            selectedOverlay.layer.borderWidth = isSelected ? 3.0 : 1.0
+            selectedOverlay.layer.borderWidth = isSelected ? 3.5 : 1.0
             let scale = CGFloat(isSelected ? 1.00 : 1.0)
             
             UIView.animate(withDuration: 0.2) {

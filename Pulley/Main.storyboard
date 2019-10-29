@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGL-tC-8gT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eGL-tC-8gT">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -343,7 +343,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGI-29-XqZ" userLabel="Sub Category Container">
-                                <rect key="frame" x="0.0" y="164" width="375" height="115"/>
+                                <rect key="frame" x="0.0" y="149" width="375" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="115" id="MCq-nJ-4sT"/>
                                 </constraints>
@@ -352,7 +352,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JY-5h-fsc" userLabel="Sub Category Container">
-                                <rect key="frame" x="0.0" y="294" width="375" height="39.5"/>
+                                <rect key="frame" x="0.0" y="264" width="375" height="69.5"/>
                                 <connections>
                                     <segue destination="7Wz-dV-Ybf" kind="embed" id="czo-Jr-nFI"/>
                                 </connections>
@@ -363,8 +363,8 @@
                             <constraint firstItem="8JY-5h-fsc" firstAttribute="leading" secondItem="hOs-aZ-mnO" secondAttribute="leading" id="DXP-8z-77D"/>
                             <constraint firstItem="hOs-aZ-mnO" firstAttribute="top" secondItem="uef-Gr-bDa" secondAttribute="bottom" constant="10" id="FCi-gG-Wrj"/>
                             <constraint firstItem="8JY-5h-fsc" firstAttribute="trailing" secondItem="hOs-aZ-mnO" secondAttribute="trailing" id="RUE-wl-wAm"/>
-                            <constraint firstItem="8JY-5h-fsc" firstAttribute="top" secondItem="vGI-29-XqZ" secondAttribute="bottom" constant="15" id="UQr-EX-0gg"/>
-                            <constraint firstItem="vGI-29-XqZ" firstAttribute="top" secondItem="hOs-aZ-mnO" secondAttribute="bottom" constant="15" id="Wyt-EW-F7n"/>
+                            <constraint firstItem="8JY-5h-fsc" firstAttribute="top" secondItem="vGI-29-XqZ" secondAttribute="bottom" id="UQr-EX-0gg"/>
+                            <constraint firstItem="vGI-29-XqZ" firstAttribute="top" secondItem="hOs-aZ-mnO" secondAttribute="bottom" id="Wyt-EW-F7n"/>
                             <constraint firstItem="4OA-G5-t12" firstAttribute="bottom" secondItem="8JY-5h-fsc" secondAttribute="bottom" id="ak7-Gd-FsW"/>
                             <constraint firstItem="uef-Gr-bDa" firstAttribute="top" secondItem="4OA-G5-t12" secondAttribute="top" constant="10" id="jhq-vV-SpS"/>
                             <constraint firstItem="vGI-29-XqZ" firstAttribute="leading" secondItem="hOs-aZ-mnO" secondAttribute="leading" id="sVj-fU-Ik5"/>
@@ -451,7 +451,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewLayout key="collectionViewLayout" id="eaA-wp-6za" customClass="HorizontalFlow" customModule="PulleyDemo" customModuleProvider="target"/>
+                        <collectionViewLayout key="collectionViewLayout" id="eaA-wp-6za" customClass="HorizontalFlow2" customModule="PulleyDemo" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="z7Q-Fc-VXE">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -477,7 +477,7 @@
             <objects>
                 <collectionViewController id="7Wz-dV-Ybf" customClass="PhotosCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" id="pqk-uq-DsM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="PvO-2I-RkK">

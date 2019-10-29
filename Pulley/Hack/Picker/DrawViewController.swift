@@ -41,6 +41,8 @@ class DrawViewController: UIViewController {
         
         if let product = self.product, product == .pets {
             dataManager.updateRoot(.pets)
+            dataManager.updateSelectdSubs([0])
+            dataManager.state.selectedSubs = []
         }
     }
 

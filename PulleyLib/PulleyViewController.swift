@@ -201,7 +201,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
 
     // Public
     
-    public let bounceOverflowMargin: CGFloat = 20.0
+    public let bounceOverflowMargin: CGFloat = 0
 
     /// The current content view controller (shown behind the drawer).
     public fileprivate(set) var primaryContentViewController: UIViewController! {
@@ -485,7 +485,7 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
     @IBInspectable public var animationDelay: TimeInterval = 0.0
     
     /// The spring damping for setting the drawer position
-    @IBInspectable public var animationSpringDamping: CGFloat = 0.75
+    @IBInspectable public var animationSpringDamping: CGFloat = 1.0
     
     /// The spring's initial velocity for setting the drawer position
     @IBInspectable public var animationSpringInitialVelocity: CGFloat = 0.0

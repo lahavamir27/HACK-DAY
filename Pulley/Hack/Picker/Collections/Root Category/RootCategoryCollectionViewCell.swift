@@ -17,6 +17,8 @@ class RootCategoryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         imageView.layer.cornerRadius = 10
+        selectedOverlay.layer.cornerRadius = 10
+
     }
     
     override var isSelected: Bool {
