@@ -27,11 +27,16 @@ class DrawViewController: UIViewController {
     var rootCollection: RootCollectionViewController?
     var subCollection: SubCategoryCollectionViewController?
     
+    var product: Prodcut?
     let dataManager = DataManger.shared()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if let product = self.product, product == .pets {
+            dataManager.updateRoot(.pets)
+        }
     }
     
 

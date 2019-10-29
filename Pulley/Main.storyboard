@@ -46,7 +46,7 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="initialDrawerPositionFromIB" value="open"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="drawerTopInset">
-                            <real key="value" value="170"/>
+                            <real key="value" value="140"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -389,16 +389,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWJ-ee-LE9" userLabel="canvas Container">
-                                <rect key="frame" x="0.0" y="20" width="375" height="313.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gSV-Xt-NaH" firstAttribute="trailing" secondItem="LWJ-ee-LE9" secondAttribute="trailing" id="6ho-Xp-RkO"/>
-                            <constraint firstItem="LWJ-ee-LE9" firstAttribute="top" secondItem="gSV-Xt-NaH" secondAttribute="top" constant="20" id="mh4-WB-ECN"/>
+                            <constraint firstItem="LWJ-ee-LE9" firstAttribute="top" secondItem="gSV-Xt-NaH" secondAttribute="top" id="mh4-WB-ECN"/>
                             <constraint firstItem="LWJ-ee-LE9" firstAttribute="leading" secondItem="gSV-Xt-NaH" secondAttribute="leading" id="rS9-w8-uTC"/>
-                            <constraint firstItem="gSV-Xt-NaH" firstAttribute="bottom" secondItem="LWJ-ee-LE9" secondAttribute="bottom" id="yRF-U0-kaY"/>
+                            <constraint firstItem="gSV-Xt-NaH" firstAttribute="bottom" secondItem="LWJ-ee-LE9" secondAttribute="bottom" constant="50" id="yRF-U0-kaY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSV-Xt-NaH"/>
                     </view>

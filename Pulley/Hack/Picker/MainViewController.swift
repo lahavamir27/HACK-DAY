@@ -34,6 +34,7 @@ class MainViewController: PulleyViewController {
         
         if let draw = segue.destination as? DrawViewController {
             draw.delegate = self
+            draw.product = product
         }
         
         if let canvas = segue.destination as? ProductViewController {
