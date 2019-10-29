@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Pulley
 
 protocol RootCategoryColectionProtocol: AnyObject {
     func didSelect(rootCategory: Category)
@@ -27,13 +28,35 @@ class DrawViewController: UIViewController {
     var rootCollection: RootCollectionViewController?
     var subCollection: SubCategoryCollectionViewController?
     
+    //  Constraints
+    @IBOutlet weak var rootCategoryHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var subCollectionHeightConstraint: NSLayoutConstraint!
+    
+    var product: Prodcut?
     let dataManager = DataManger.shared()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        if let product = self.product, product == .pets {
+            dataManager.updateRoot(.pets)
+        }
     }
-    
+
+    func drawerDidChange(position: PulleyPosition) {
+        switch position {
+        case .open:
+            self.rootCategoryHeightConstraint.constant = 124
+            self.subCollectionHeightConstraint.constant = 115
+        default:
+            
+            self.rootCategoryHeightConstraint.constant = 0
+            self.subCollectionHeightConstraint.constant = 0
+        }
+        
+        self.view.layoutIfNeeded()
+    }
 
     // MARK: - Navigation
 

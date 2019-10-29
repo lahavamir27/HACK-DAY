@@ -98,3 +98,9 @@ class StoreViewController: UICollectionViewController {
         self.performSegue(withIdentifier: "showProduct", sender: product)
     }
 }
+extension StoreViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.frame.size.width / 2
+        return CGSize(width: size, height: 250)
+    }
+}

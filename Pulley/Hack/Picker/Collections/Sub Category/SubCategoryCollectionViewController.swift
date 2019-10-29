@@ -85,6 +85,7 @@ class SubCategoryCollectionViewController: UICollectionViewController {
         cell.imageView.image = item.image
         cell.label.text = item.label
         cell.isSelected = selected.contains(indexPath.item)
+        cell.label.isHidden = dataManager.state.selectedRoot == .people
         return cell
     }
     

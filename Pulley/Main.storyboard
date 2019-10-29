@@ -46,7 +46,7 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="initialDrawerPositionFromIB" value="open"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="drawerTopInset">
-                            <real key="value" value="170"/>
+                            <real key="value" value="100"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -375,6 +375,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4OA-G5-t12"/>
                     </view>
+                    <connections>
+                        <outlet property="rootCategoryHeightConstraint" destination="dUs-3R-2xO" id="ZYU-tK-M1f"/>
+                        <outlet property="subCollectionHeightConstraint" destination="MCq-nJ-4sT" id="vPL-0z-anx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neL-g8-2Ns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,16 +393,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LWJ-ee-LE9" userLabel="canvas Container">
-                                <rect key="frame" x="0.0" y="20" width="375" height="313.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="283.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gSV-Xt-NaH" firstAttribute="trailing" secondItem="LWJ-ee-LE9" secondAttribute="trailing" id="6ho-Xp-RkO"/>
-                            <constraint firstItem="LWJ-ee-LE9" firstAttribute="top" secondItem="gSV-Xt-NaH" secondAttribute="top" constant="20" id="mh4-WB-ECN"/>
+                            <constraint firstItem="LWJ-ee-LE9" firstAttribute="top" secondItem="gSV-Xt-NaH" secondAttribute="top" id="mh4-WB-ECN"/>
                             <constraint firstItem="LWJ-ee-LE9" firstAttribute="leading" secondItem="gSV-Xt-NaH" secondAttribute="leading" id="rS9-w8-uTC"/>
-                            <constraint firstItem="gSV-Xt-NaH" firstAttribute="bottom" secondItem="LWJ-ee-LE9" secondAttribute="bottom" id="yRF-U0-kaY"/>
+                            <constraint firstItem="gSV-Xt-NaH" firstAttribute="bottom" secondItem="LWJ-ee-LE9" secondAttribute="bottom" constant="50" id="yRF-U0-kaY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSV-Xt-NaH"/>
                     </view>
@@ -414,7 +418,7 @@
         <scene sceneID="tA2-pA-OLq">
             <objects>
                 <collectionViewController id="wbD-rN-93E" customClass="RootCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="vYh-tW-7PU">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="vYh-tW-7PU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -443,7 +447,7 @@
         <scene sceneID="Zox-xM-2aK">
             <objects>
                 <collectionViewController id="KF4-Js-R1y" customClass="SubCategoryCollectionViewController" customModule="PulleyDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Gxp-mh-prT">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Gxp-mh-prT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

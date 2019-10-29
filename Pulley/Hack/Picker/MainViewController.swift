@@ -19,12 +19,13 @@ class MainViewController: PulleyViewController {
             self.title = title
         }
         
+        self.delegate = self
     }
 
     var product: Prodcut?
     
     var canvasVC: ProductViewController?
-    
+    var drawerVC: DrawViewController?
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -34,6 +35,8 @@ class MainViewController: PulleyViewController {
         
         if let draw = segue.destination as? DrawViewController {
             draw.delegate = self
+            draw.product = product
+            self.drawerVC = draw
         }
         
         if let canvas = segue.destination as? ProductViewController {
@@ -41,6 +44,10 @@ class MainViewController: PulleyViewController {
             
             canvasVC?.product = self.product
         }
+    }
+    
+    override func drawerPositionDidChange(drawer: PulleyViewController, bottomSafeArea: CGFloat) {
+        self.drawerVC?.drawerDidChange(position: self.drawerPosition)
     }
 }
 
