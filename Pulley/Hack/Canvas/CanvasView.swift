@@ -9,19 +9,8 @@
 import UIKit
 
 class CanvasView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        
-        
     }
 
     func setImages(_ images: [UIImage]) {
@@ -40,17 +29,29 @@ class CanvasView: UIView {
 
 class PetCanvas: CanvasView {
     @IBOutlet weak var userImage: UIImageView!
-    
-    @IBOutlet var height: NSLayoutConstraint!
-    @IBOutlet var canvasImage: UIImageView!
-    
-    override func setImages(_ images: [UIImage]) {
-        super.setImages(images)
-        //height.constant = canvasImage.frame.size.height
-        self.userImage.frame = canvasImage.frame
-    }
-    
+     
     override func getUserImages() -> [UIImageView] {
         [userImage]
+    }
+}
+
+class LoveCanvas: CanvasView {
+    @IBOutlet weak var userImage1: UIImageView!
+    
+    @IBOutlet weak var userImage2: UIImageView!
+    
+    override func getUserImages() -> [UIImageView] {
+        [userImage1, userImage2]
+    }
+}
+
+class FamilyCanvas: CanvasView {
+    
+    @IBOutlet var userImage1: UIImageView!
+    @IBOutlet var userImage2: UIImageView!
+    @IBOutlet var userImage3: UIImageView!
+    
+    override func getUserImages() -> [UIImageView] {
+        [userImage1, userImage2, userImage3]
     }
 }

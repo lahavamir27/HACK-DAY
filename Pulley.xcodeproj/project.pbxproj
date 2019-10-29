@@ -19,6 +19,8 @@
 		66199B8F2367A15A006A80F8 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66199B8E2367A15A006A80F8 /* Root.storyboard */; };
 		66199B922367B846006A80F8 /* PetCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66199B912367B846006A80F8 /* PetCanvas.xib */; };
 		66199B942367BAC2006A80F8 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66199B932367BAC2006A80F8 /* CanvasView.swift */; };
+		66199B962367CB26006A80F8 /* LoveCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66199B952367CB26006A80F8 /* LoveCanvas.xib */; };
+		66199B982367D8D4006A80F8 /* FamilyCanvas.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66199B972367D8D4006A80F8 /* FamilyCanvas.xib */; };
 		6675AB6B236705F10048596B /* SubCategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */; };
 		6675AB6E2367081E0048596B /* RootCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6675AB6C2367081E0048596B /* RootCategoryCollectionViewCell.swift */; };
 		6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6675AB6D2367081E0048596B /* RootCategoryCollectionViewCell.xib */; };
@@ -82,6 +84,8 @@
 		66199B8E2367A15A006A80F8 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		66199B912367B846006A80F8 /* PetCanvas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PetCanvas.xib; sourceTree = "<group>"; };
 		66199B932367BAC2006A80F8 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		66199B952367CB26006A80F8 /* LoveCanvas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoveCanvas.xib; sourceTree = "<group>"; };
+		66199B972367D8D4006A80F8 /* FamilyCanvas.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FamilyCanvas.xib; sourceTree = "<group>"; };
 		6675AB68236705390048596B /* SubCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		6675AB6A236705F10048596B /* SubCategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		6675AB6C2367081E0048596B /* RootCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 			children = (
 				66199B912367B846006A80F8 /* PetCanvas.xib */,
 				66199B932367BAC2006A80F8 /* CanvasView.swift */,
+				66199B952367CB26006A80F8 /* LoveCanvas.xib */,
+				66199B972367D8D4006A80F8 /* FamilyCanvas.xib */,
 			);
 			path = Canvas;
 			sourceTree = "<group>";
@@ -414,12 +420,14 @@
 				66199B8B23676985006A80F8 /* TestImages in Resources */,
 				C6DF73EC1D2E027500735EBC /* Main.storyboard in Resources */,
 				C6DF73DD1D2DE2B500735EBC /* LaunchScreen.storyboard in Resources */,
+				66199B962367CB26006A80F8 /* LoveCanvas.xib in Resources */,
 				66199B8D236769A3006A80F8 /* document.json in Resources */,
 				54CB6E632367A4480036311F /* Carmel in Resources */,
 				6675AB7423670BD70048596B /* PhotoCollectionViewCell.xib in Resources */,
 				C6DF73DA1D2DE2B500735EBC /* Assets.xcassets in Resources */,
 				66199B922367B846006A80F8 /* PetCanvas.xib in Resources */,
 				6675AB6F2367081E0048596B /* RootCategoryCollectionViewCell.xib in Resources */,
+				66199B982367D8D4006A80F8 /* FamilyCanvas.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

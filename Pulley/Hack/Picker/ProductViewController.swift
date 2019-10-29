@@ -12,13 +12,15 @@ class ProductViewController: UIViewController {
 
     @IBOutlet weak var canvasContainer: UIView!
     var canvasView: CanvasView?
+    var product: Prodcut?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let localView: PetCanvas = UIView.fromNib()
-        self.view.addSubview(localView)
-        self.canvasView = localView
+        if let localView = self.product?.getView() {
+            self.view.addSubview(localView)
+            self.canvasView = localView
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,7 +33,6 @@ class ProductViewController: UIViewController {
     
     
     func setImage(_ images: [UIImage]) {
-//        canvasImage.image = image
         canvasView?.setImages(images)
     }
 }

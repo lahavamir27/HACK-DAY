@@ -32,9 +32,34 @@ enum Prodcut: CaseIterable {
         case .family: return "familyProduct"
         }
     }
+     
+    var title: String {
+        switch self {
+             case .pets: return "Pets"
+             case .love: return "Love"
+             case .family: return "Family"
+             }
+    }
+    
+    func getView() -> CanvasView {
+        switch self {
+        case .pets:
+        let localView: PetCanvas = UIView.fromNib()
+        return localView
+        case .love:
+            let localView: LoveCanvas = UIView.fromNib()
+            return localView
+        case .family:
+            let localView: FamilyCanvas = UIView.fromNib()
+            return localView
+        }
+    }
 }
 
 class StoreViewController: UICollectionViewController {
+    override func viewDidLoad() {
+        self.title = "Products"
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

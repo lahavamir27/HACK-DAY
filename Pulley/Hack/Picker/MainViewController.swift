@@ -15,7 +15,10 @@ class MainViewController: PulleyViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "Product"
+        if let title = self.product?.title {
+            self.title = title
+        }
+        
     }
 
     var product: Prodcut?
@@ -35,6 +38,8 @@ class MainViewController: PulleyViewController {
         
         if let canvas = segue.destination as? ProductViewController {
             if self.canvasVC == nil { self.canvasVC = canvas }
+            
+            canvasVC?.product = self.product
         }
     }
 }
