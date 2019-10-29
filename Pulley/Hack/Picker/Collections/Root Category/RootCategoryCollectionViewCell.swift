@@ -18,6 +18,7 @@ class RootCategoryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         imageView.layer.cornerRadius = 10
         selectedOverlay.layer.cornerRadius = 10
+        selectedOverlay.layer.borderColor = UIColor(displayP3Red: 0, green: 118/255, blue: 234/255, alpha: 1).cgColor
 
     }
     

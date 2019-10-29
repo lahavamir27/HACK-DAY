@@ -38,7 +38,7 @@ class DrawViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        dataManager.updateRoot(.people)
         if let product = self.product, product == .pets {
             dataManager.updateRoot(.pets)
             dataManager.updateSelectdSubs([0])

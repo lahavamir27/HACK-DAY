@@ -272,9 +272,14 @@ class DataManger {
         }
         var setOfObject = Set<ImageRep>()
         var setOfCategories = Set<String>()
+        var count:[String:Int] = [:]
         allImages.forEach { (image) in
             image.categories.forEach { (category) in
-                
+                if count[category] == nil {
+                    count[category] = 1
+                }else {
+                    count[category]! += 1
+                }
                 guard !setOfCategories.contains(category) else {
                     return
                 }
@@ -287,8 +292,26 @@ class DataManger {
                 }
             }
         }
-    
-        let objects = Array(setOfObject).sorted(by: sortMe)
+        print(count)
+
+        var objects = Array(setOfObject).sorted { (a, b) -> Bool in
+            if let countA = count[a.label.replacingOccurrences(of: " ", with: "_").lowercased()], let countB = count[b.label.replacingOccurrences(of: " ", with: "_").lowercased()] {
+                return countA > countB
+            }
+            return a.label < b.label
+        }
+        
+        objects.removeAll { (image) -> Bool in
+            if let countT = count[image.label.replacingOccurrences(of: " ", with: "_").lowercased()] {
+                if countT < 2 {
+                    return true
+                }
+                if image.label == "People" || image.label == "Adult" {
+                    return true
+                }
+            }
+            return false
+        }
         cacheObject = objects
         return objects
         
@@ -305,10 +328,16 @@ class DataManger {
         if !cachePeople.isEmpty {
             return cachePeople
         }
-        
+        var count:[String:Int] = [:]
+
         var setOfPeople = Set<FinalFace>()
         allImages.forEach { (image) in
             image.people.forEach { (face) in
+                if count[face.label] == nil {
+                    count[face.label] = 1
+                }else {
+                    count[face.label]! += 1
+                }
                 let faceT = FinalFace(label: face.label, corpRect: face.cropRect, imageName: image.imageName)
                 if face.cropRect.origin.x < 0 || face.cropRect.origin.y < 0 || face.cropRect.size.width > 70{
                 }else{
@@ -341,25 +370,15 @@ class DataManger {
             }
         })
         
-        return r.sorted { (a, b) -> Bool in
+        let p = r.sorted { (a, b) -> Bool in
+            if let countA = count[a.label], let countB = count[b.label] {
+                return countA > countB
+            }
             return a.label < b.label
         }
         
-        let peoples = Array(setOfPeople).sorted { (imageA, imageB) -> Bool in
-            return imageA.label < imageB.label
-        }.compactMap { (image) -> ImageRep? in
-            let images =  getImage(for: image.imageName ?? "")
-            let scale = UIScreen.main.scale
-            let rect = CGRect(x: image.cropRect.origin.x * scale, y: image.cropRect.origin.y * scale , width: image.cropRect.size.width * scale, height: image.cropRect.size.height * scale)
-            if let cgImage = images?.cgImage?.cropping(to: rect) {
-                return ImageRep(label: image.label, image: UIImage(cgImage: cgImage))
-            }else {
-                return nil
-            }
-        }.sorted(by: sortMe)
-        
-        cachePeople = peoples
-        return peoples
+        cachePeople = p
+        return cachePeople
     }
     
     func downsample(imageAt imageURL: URL, to pointSize: CGSize) -> UIImage? {
