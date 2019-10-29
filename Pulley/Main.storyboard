@@ -46,7 +46,7 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="initialDrawerPositionFromIB" value="open"/>
                         <userDefinedRuntimeAttribute type="number" keyPath="drawerTopInset">
-                            <real key="value" value="140"/>
+                            <real key="value" value="100"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
