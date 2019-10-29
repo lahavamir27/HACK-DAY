@@ -375,6 +375,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4OA-G5-t12"/>
                     </view>
+                    <connections>
+                        <outlet property="rootCategoryHeightConstraint" destination="dUs-3R-2xO" id="ZYU-tK-M1f"/>
+                        <outlet property="subCollectionHeightConstraint" destination="MCq-nJ-4sT" id="vPL-0z-anx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neL-g8-2Ns" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
