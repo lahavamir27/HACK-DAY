@@ -41,7 +41,6 @@ class MainViewController: PulleyViewController {
 
 extension MainViewController: DrawPhotoSelectionProtocol {
     func didSelect(images: [ImageRep]) {
-        guard let image = images.first else { return }
-        self.canvasVC?.setImage(image.image)
+        self.canvasVC?.setImage(images.map({ $0.image }))
     }
 }

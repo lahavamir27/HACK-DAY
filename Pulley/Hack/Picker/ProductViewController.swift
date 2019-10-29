@@ -10,13 +10,34 @@ import UIKit
 
 class ProductViewController: UIViewController {
 
-    @IBOutlet weak var canvasImage: UIImageView!
+    @IBOutlet weak var canvasContainer: UIView!
+    var canvasView: CanvasView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let localView: PetCanvas = UIView.fromNib()
+        self.view.addSubview(localView)
+        self.canvasView = localView
     }
     
-    func setImage(_ image: UIImage) {
-        canvasImage.image = image
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let canvasView = self.canvasView {
+            canvasView.frame = self.view.frame
+        }
+    }
+    
+    
+    func setImage(_ images: [UIImage]) {
+//        canvasImage.image = image
+        canvasView?.setImages(images)
+    }
+}
+
+extension UIView {
+    class func fromNib<T: UIView>() -> T {
+        return Bundle(for: T.self).loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
     }
 }

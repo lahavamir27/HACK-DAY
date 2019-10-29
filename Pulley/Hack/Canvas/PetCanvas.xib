@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15508"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PetCanvas" customModule="PulleyDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="00100dPORTRAIT_00100_BURST20190615125524330_COVER.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2Kt-pe-M9d" userLabel="userImage">
+                    <rect key="frame" x="0.0" y="0.0" width="3024" height="4032"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kipodCanvas" translatesAutoresizingMaskIntoConstraints="NO" id="x2e-mt-p0x" userLabel="Canvas Image">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="380"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="x2e-mt-p0x" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0pK-M6-euW"/>
+                <constraint firstItem="2Kt-pe-M9d" firstAttribute="leading" secondItem="x2e-mt-p0x" secondAttribute="leading" id="8Rd-tf-vfc"/>
+                <constraint firstItem="x2e-mt-p0x" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hoh-v9-gzE"/>
+                <constraint firstItem="2Kt-pe-M9d" firstAttribute="top" secondItem="x2e-mt-p0x" secondAttribute="top" id="akY-AC-2RR"/>
+                <constraint firstAttribute="trailing" secondItem="x2e-mt-p0x" secondAttribute="trailing" id="yIK-pZ-KxQ"/>
+                <constraint firstAttribute="bottom" secondItem="x2e-mt-p0x" secondAttribute="bottom" id="ykq-mj-Hvf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="canvasImage" destination="x2e-mt-p0x" id="UM7-aK-R1D"/>
+                <outlet property="userImage" destination="2Kt-pe-M9d" id="xSY-QS-S9z"/>
+            </connections>
+            <point key="canvasLocation" x="60.869565217391312" y="-233.70535714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="00100dPORTRAIT_00100_BURST20190615125524330_COVER.jpg" width="3024" height="4032"/>
+        <image name="kipodCanvas" width="611" height="466"/>
+    </resources>
+</document>

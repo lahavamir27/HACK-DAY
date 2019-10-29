@@ -67,7 +67,6 @@ class DataManger {
         let decodedPhotos = try! JSONDecoder().decode(FinalImages.self, from: data)
         allImages = decodedPhotos.images
         updateRoot(.people)
-        print(decodedPhotos)
         
     }
     
